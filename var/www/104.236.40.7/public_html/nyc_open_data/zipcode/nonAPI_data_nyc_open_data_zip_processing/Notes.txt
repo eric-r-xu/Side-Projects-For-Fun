@@ -1,8 +1,0 @@
-Copy
-AllData.csv (existing dataset)
-and
-NYPD_Motor_Vehicle_Collisions.csv (download from website)
-before running python script
-
-
-this script updates AllData.csv to AllData_new.csv with data that is not found in the API.  It also checks google maps API to fill in missing zips through street names (when possible)

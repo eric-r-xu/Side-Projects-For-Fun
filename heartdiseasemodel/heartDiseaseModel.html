@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Prediction Wizard</title>
+  <link rel="stylesheet" href="static/d3.slider.css" /> 
+  <style>
+
+    body {
+      font-family: Verdana,Arial,sans-serif;
+    }
+
+    h2 {
+      font-size: 1.2em;
+      margin: 60px 0 5px 0;
+      color: gray
+    }
+
+    .space {
+      margin-bottom: 20 px;
+    }
+
+    .wrapper {
+      width: 800px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 0px;
+    }
+
+    #bar_chart {
+      margin-bottom: 0 px;
+    }
+
+    .bar {
+      fill: #8B0000;
+    }
+
+    span {
+      color: steelblue;
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <div id="chart_area" class="wrapper">
+    <h2>Heart Disease Risk - see <a href="http://martialm0nk.blogspot.com/2014/10/modeling-predicting-heart-disease-with.html">blog post</a></h2>
+    <p class="space"></p>
+    <div id="bar_chart">
+    </div>
+  </div>
+
+  <div id="sliders" class="wrapper">
+
+    <h2 class="feature">Age x Gender(1=female,2=male): <span id="agesex">100</span></h2>
+    <div id="agesex_slider"></div>
+
+    <h2 class="feature">Cholesterol Level (mg/dL): <span id="chol">242</span></h2>
+    <div id="chol_slider"></div>
+
+    <h2 class="feature">Max Heart Rate During Exercise (beats per second): <span id="thalach">142</span></h2>
+    <div id="thalach_slider"></div>
+
+  </div>
+
+  <!-- Import the libraries: jQuery, d3, d3.slider -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+  <script src="static/d3.slider.js"></script>
+  
+  <script>
+
+    <!-- SINGLE BAR CHART -->
+
+    var current_agesex = 100;
+    var current_chol = 242;
+    var current_thal = 142;
+    var current_risk = 50;     <!---huh-->
+
+    var chart = d3.select("#bar_chart")
+      .append("svg:svg")
+        .attr("width", 800)
+        .attr("height", 100);
+
+    var chance_scale = d3.scale.linear()
+      .domain([0, 100])
+      .range([0, 800]);
+
+    var bar = chart.append("g")
+                   .attr("class", "bar")
+
+    bar.append("svg:rect")
+      .attr("id", "chancebar")
+      .attr("class", "bar")
+      .attr("width", chance_scale(current_risk))
+      .attr("height", 100);
+
+     bar.append("text")
+        .attr("id", "percent_text")
+        .attr("dy", ".75em")
+        .attr("y", 15)
+        .attr("x", chance_scale(current_risk+5))
+        .attr("text-anchor", "middle")
+        .attr("fill", "black")
+        .attr("font-size", 20)
+        .text( current_risk.toFixed(1) + "%");
+
+
+    <!-- FUNCTION TO GET CHANCE FROM YOUR PREDICTOR WITH AJAX AND CHANGE BAR HEIGHT -->
+    function getAndDrawChance(agesex, chol, thalach){ 
+        
+    	$.ajax({ 
+    		type: "POST", 
+    		contentType: "application/json; charset=utf-8", 
+    		url: "/score", 
+    		dataType: "json", 
+    		async: true, 
+    		data: "{\"example\": ["+agesex+","+chol+","+thalach+"]}", 
+    		success: function (data) { 
+    		   var chance = 100 * data["score"]; 
+                   d3.select("#chancebar")
+                         .attr("width", chance_scale(chance));
+                   d3.select("#percent_text")
+                         .attr("x", chance_scale(chance+5))
+                         .text(chance.toFixed(1) + "%");
+    		}, 
+    		error: function (result) { 
+    		} 
+    	       }) 
+    } 
+
+
+    <!-- SLIDERS -->
+
+    d3.select('#agesex_slider')
+      .call(
+            d3.slider()
+              .value(current_agesex)
+              .min(10)
+              .max(200)
+              .step(1)
+              .axis(true)
+              .on("slide", function(evt,value) {
+                                                d3.select('#agesex').text(value);
+                                                current_agesex = value;
+                                                getAndDrawChance(current_agesex, current_chol, current_thal)
+                                               }
+                 )
+           );
+
+    d3.select('#chol_slider')
+      .call(
+            d3.slider()
+              .value(current_chol)
+              .min(40)
+              .max(700)
+              .step(1)
+              .axis(true)
+              .on("slide", function(evt,value) {
+                                                 d3.select('#chol').text(value);
+                                                 current_chol = value;
+                                                 getAndDrawChance(current_agesex, current_chol, current_thal)
+                                               }
+                 )
+           );
+
+    d3.select('#thalach_slider')
+      .call(
+            d3.slider()
+              .value(current_thal)
+              .min(40)
+              .max(300)
+              .step(1)
+              .axis(true)
+              .on("slide", function(evt,value) {
+                                                 d3.select('#thalach').text(value);
+                                                 current_thal = value;
+                                                 getAndDrawChance(current_agesex, current_chol, current_thal)
+                                               }
+                 )
+           );
+
+  </script>
+</body>
+</html>
