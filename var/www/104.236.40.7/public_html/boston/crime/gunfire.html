@@ -31,7 +31,7 @@ var width = 960,
    height = 500;
 
 var colordata = {};
-d3.csv("ZipData.csv", function(error, data)
+d3.csv("gunfire.csv", function(error, data)
   {
     data.forEach( function(d) { colordata[d.zip] = d.value;} );
 
@@ -39,7 +39,7 @@ d3.csv("ZipData.csv", function(error, data)
 );
 
 
-d3.csv("ZipData.csv", function(d)
+d3.csv("gunfire.csv", function(d)
   {
     return {
       zip: +d.zip,
@@ -127,7 +127,6 @@ d3.csv("ZipData.csv", function(d)
               .append("text")
               .attr("x", 33)
               .attr("y", 99)
-              .attr('class','bold-this')
               .style("fill", "black")
               .style("font-size", "11px")
               .attr("dy", ".15em")
@@ -135,7 +134,7 @@ d3.csv("ZipData.csv", function(d)
               .text('[ALL CRIMES]');
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/")
               .append("text")
               .attr("x", 33)
               .attr("y", 110)
@@ -143,11 +142,10 @@ d3.csv("ZipData.csv", function(d)
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .attr('class','bold-this')
               .text("[raw]");
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/normalized.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/normalized.html")
               .append("text")
               .attr("x", 66)
               .attr("y", 110)
@@ -169,7 +167,7 @@ d3.csv("ZipData.csv", function(d)
               .text('[PERSONAL]');
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/personal.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal.html")
               .append("text")
               .attr("x", 43)
               .attr("y", 132)
@@ -180,7 +178,7 @@ d3.csv("ZipData.csv", function(d)
               .text("[raw]");
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/personal_n.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_n.html")
               .append("text")
               .attr("x", 76)
               .attr("y", 132)
@@ -202,7 +200,7 @@ d3.csv("ZipData.csv", function(d)
               .text('[SEXUAL]');
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/personal_sexual.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_sexual.html")
               .append("text")
               .attr("x", 53)
               .attr("y", 154)
@@ -213,7 +211,7 @@ d3.csv("ZipData.csv", function(d)
               .text("[raw]");
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/personal_sexual_n.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_sexual_n.html")
               .append("text")
               .attr("x", 86)
               .attr("y", 154)
@@ -235,7 +233,7 @@ d3.csv("ZipData.csv", function(d)
               .text('[PROPERTY]');
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/property.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/property.html")
               .append("text")
               .attr("x", 43)
               .attr("y", 176)
@@ -246,7 +244,7 @@ d3.csv("ZipData.csv", function(d)
               .text("[raw]");
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/property_n.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/property_n.html")
               .append("text")
               .attr("x", 76)
               .attr("y", 176)
@@ -267,7 +265,7 @@ d3.csv("ZipData.csv", function(d)
               .text('[INCHOATE]');
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/inchoate.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/inchoate.html")
               .append("text")
               .attr("x", 43)
               .attr("y", 198)
@@ -278,7 +276,7 @@ d3.csv("ZipData.csv", function(d)
               .text("[raw]");
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/inchoate_n.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/inchoate_n.html")
               .append("text")
               .attr("x", 76)
               .attr("y", 198)
@@ -288,7 +286,6 @@ d3.csv("ZipData.csv", function(d)
               .attr("text-anchor", "middle")
               .text("[normalized]");
 
-
           buttonSourceALL.append("a")
               .append("text")
               .attr("x", 47)
@@ -297,10 +294,11 @@ d3.csv("ZipData.csv", function(d)
               .style("font-size", "11px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
+              .attr('class','bold-this')
               .text('[GUNFIRE REPORTS]');
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/gunfire.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/gunfire.html")
               .append("text")
               .attr("x", 33)
               .attr("y", 220)
@@ -308,10 +306,11 @@ d3.csv("ZipData.csv", function(d)
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
+              .attr('class','bold-this')
               .text("[raw]");
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/gunfire_n.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/gunfire_n.html")
               .append("text")
               .attr("x", 66)
               .attr("y", 220)
@@ -321,6 +320,7 @@ d3.csv("ZipData.csv", function(d)
               .attr("text-anchor", "middle")
               .text("[normalized]");
 
+              
         var key = svg.append("g").
           attr("width", 25).
           attr("height", 120);

@@ -1,7 +1,5 @@
 
-# coding: utf-8
-
-# In[4]:
+# Eric Xu , 2017-02
 
 import pandas as pd
 from pandas import DataFrame
@@ -20,10 +18,10 @@ from datetime import datetime
 from datetime import timedelta
 
 # importing data
-all_data = pd.read_csv('/var/www/104.236.40.7/public_html/boston/AllData.csv',
+all_data = pd.read_csv('/var/www/104.236.40.7/public_html/boston/crime/AllData.csv',
                        dtype={'zip': 'str'})
 
-ZipDF = pd.read_csv('/var/www/104.236.40.7/public_html/boston/ZipDataBase.csv',
+ZipDF = pd.read_csv('/var/www/104.236.40.7/public_html/boston/crime/ZipDataBase.csv',
                     dtype={'zip': 'str'})
 
 
@@ -118,7 +116,7 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     print mergedDF_new
 
-    mergedDF_new.to_csv('/var/www/104.236.40.7/public_html/boston/wtf.csv',dtype={'zip': 'str'}, index = False)
+    mergedDF_new.to_csv('/var/www/104.236.40.7/public_html/boston/crime/new.csv',dtype={'zip': 'str'}, index = False)
     
     # call google maps API
     Link1 = 'https://maps.googleapis.com/maps/api/geocode/json?address='
@@ -169,12 +167,12 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     all_data = all_data.reset_index(drop = True)
     print 'saving all_data'
-    all_data.to_csv('AllData.csv', dtype={'zip': 'str'}, index = False)
+    all_data.to_csv('/var/www/104.236.40.7/public_html/boston/crime/AllData.csv', dtype={'zip': 'str'}, index = False)
     print 'finished saving all data'
     
-    # filtering all_date to last 365 days in dataset
+    # filtering all_date to last 366 days in dataset
     maxDate = pd.Timestamp(max(all_data['datetime']))
-    DateFilter = str(maxDate - timedelta(days=364))
+    DateFilter = str(maxDate - timedelta(days=365))
     all_data = all_data[all_data['datetime']>=DateFilter]
     all_data = all_data.reset_index(drop = True)
 
@@ -293,8 +291,8 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     MergedDF.columns = ['zip','value']
     MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/normalized.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/ZipData.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/normalized.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/ZipData.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished ALL CRIMES'
 
 
@@ -323,8 +321,8 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     MergedDF.columns = ['zip','value']
     MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/personal_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/personal.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished PERSONAL CRIMES'
 
 
@@ -353,8 +351,8 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     MergedDF.columns = ['zip','value']
     MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/personal_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/personal.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished PERSONAL CRIMES'
 
 
@@ -385,8 +383,8 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     MergedDF.columns = ['zip','value']
     MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/personal_sexual_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/personal_sexual.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_sexual_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_sexual.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished PERSONAL SEXUAL CRIMES'
 
 
@@ -417,8 +415,8 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     MergedDF.columns = ['zip','value']
     MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/property_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/property.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/property_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/property.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished PROPERTY CRIMES'
 
 
@@ -450,8 +448,8 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     MergedDF.columns = ['zip','value']
     MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/gunfire_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/gunfire.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/gunfire_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/gunfire.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished GUNFIRE CRIMES'
 
 
@@ -480,15 +478,19 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     MergedDF.columns = ['zip','value']
     MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/inchoate_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/inchoate.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/inchoate_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/inchoate.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished INCHOATE CRIMES'
 
 else:
     print 'no updates found'
 
     
-
+# filtering all_date to last 366 days in dataset
+maxDate = pd.Timestamp(max(all_data['datetime']))
+DateFilter = str(maxDate - timedelta(days=365))
+all_data = all_data[all_data['datetime']>=DateFilter]
+all_data = all_data.reset_index(drop = True)
 
 
 
@@ -505,7 +507,7 @@ updatetime_list.append(string_value)
 
 dateDF = pd.DataFrame(zip(date_min_list,date_max_list,updatetime_list))
 dateDF.columns = ['mindate','maxdate','updatetime']
-dateDF.to_csv('/var/www/104.236.40.7/public_html/boston/displaydates_boston.csv', index = False)
+dateDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/displaydates_boston.csv', index = False)
 
 print 'made it to the bitter end!'
 
