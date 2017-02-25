@@ -1,0 +1,2 @@
+0 6,19 * * * python /var/www/104.236.40.7/public_html/nyc/collisions/latest/nyc_open_data_zip_processing.py >/var/log/cronrun 2>&1
+30 6 * * * python /var/www/104.236.40.7/public_html/boston/crime/BostonCrimeProcessing.py >/var/log/cronrun 2>&1
