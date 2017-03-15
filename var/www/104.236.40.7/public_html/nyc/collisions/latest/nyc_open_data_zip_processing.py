@@ -146,6 +146,15 @@ if len(new_dates) > 0:
 
     data_latest['date'] = None
     data_latest['date'] = latest_date_list
+    try:
+	len(data_latest['contributing_factor_vehicle_5'])
+    except:
+	data_latest['contributing_factor_vehicle_5'] = None
+
+    try:
+        len(data_latest['vehicle_type_code_5'])
+    except:
+        data_latest['vehicle_type_code_5'] = None
 
 
     zipped_array = zip(data_latest['date'], data_latest['time'], data_latest['borough'], 

@@ -119,6 +119,8 @@ d3.csv("normalized.csv", function(d)
               .attr("text-anchor", "middle")
               .text(source_text);
 
+
+
         var buttonSourceALL=svg.append("g")
               .attr("transform","translate(10,10)")
                buttonSourceALL.append("text")
@@ -146,16 +148,36 @@ d3.csv("normalized.csv", function(d)
               .text("[raw]");
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/crime/normalized.html")
               .append("text")
-              .attr("x", 66)
+              .attr("x", 68)
               .attr("y", 110)
               .style("fill", "black")
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .attr('class','bold-this')
-              .text("[normalized]");
+              .text(", normalized by");
+
+          buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/normalized.html")
+              .append("text")
+              .attr("x", 102)
+              .attr("y", 110)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text("[area]");
+
+          buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/normalized_pop.html")
+              .append("text")
+              .attr("x", 133)
+              .attr("y", 110)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text("[population]");
 
 
           buttonSourceALL.append("a")
@@ -179,16 +201,38 @@ d3.csv("normalized.csv", function(d)
               .attr("text-anchor", "middle")
               .text("[raw]");
 
+
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_n.html")
               .append("text")
-              .attr("x", 76)
+              .attr("x", 78)
               .attr("y", 132)
               .style("fill", "black")
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .text("[normalized]");
+              .text(", normalized by");
+
+          buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_n.html")
+              .append("text")
+              .attr("x", 112)
+              .attr("y", 132)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text("[area]");
+
+          buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_pop.html")
+              .append("text")
+              .attr("x", 143)
+              .attr("y", 132)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text("[population]");
 
 
           buttonSourceALL.append("a")
@@ -212,16 +256,38 @@ d3.csv("normalized.csv", function(d)
               .attr("text-anchor", "middle")
               .text("[raw]");
 
+
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_sexual_n.html")
               .append("text")
-              .attr("x", 86)
+              .attr("x", 88)
               .attr("y", 154)
               .style("fill", "black")
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .text("[normalized]");
+              .text(", normalized by");
+
+          buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_sexual_n.html")
+              .append("text")
+              .attr("x", 122)
+              .attr("y", 154)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text("[area]");
+
+          buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/personal_sexual_pop.html")
+              .append("text")
+              .attr("x", 153)
+              .attr("y", 154)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text("[population]");
 
 
           buttonSourceALL.append("a")
@@ -245,54 +311,45 @@ d3.csv("normalized.csv", function(d)
               .attr("text-anchor", "middle")
               .text("[raw]");
 
+
+
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/crime/property_n.html")
               .append("text")
-              .attr("x", 76)
+              .attr("x", 78)
               .attr("y", 176)
               .style("fill", "black")
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .text("[normalized]");
+              .text(", normalized by");
 
           buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/property_n.html")
               .append("text")
-              .attr("x", 43)
-              .attr("y", 187)
-              .style("fill", "black")
-              .style("font-size", "11px")
-              .attr("dy", ".15em")
-              .attr("text-anchor", "middle")
-              .text('[INCHOATE]');
-
-          buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/crime/inchoate.html")
-              .append("text")
-              .attr("x", 43)
-              .attr("y", 198)
+              .attr("x", 112)
+              .attr("y", 176)
               .style("fill", "black")
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .text("[raw]");
+              .text("[area]");
 
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/crime/inchoate_n.html")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/property_pop.html")
               .append("text")
-              .attr("x", 76)
-              .attr("y", 198)
+              .attr("x", 143)
+              .attr("y", 176)
               .style("fill", "black")
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .text("[normalized]");
+              .text("[population]");
 
 
           buttonSourceALL.append("a")
               .append("text")
               .attr("x", 47)
-              .attr("y", 209)
+              .attr("y", 187)
               .style("fill", "black")
               .style("font-size", "11px")
               .attr("dy", ".15em")
@@ -303,23 +360,48 @@ d3.csv("normalized.csv", function(d)
               .attr("xlink:href", "http://104.236.40.7/boston/crime/gunfire.html")
               .append("text")
               .attr("x", 33)
-              .attr("y", 220)
+              .attr("y", 198)
               .style("fill", "black")
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
               .text("[raw]");
 
+
           buttonSourceALL.append("a")
-              .attr("xlink:href", "http://104.236.40.7/boston/crime/gunfire_n.html")
               .append("text")
-              .attr("x", 66)
-              .attr("y", 220)
+              .attr("x", 68)
+              .attr("y", 198)
               .style("fill", "black")
               .style("font-size", "8px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .text("[normalized]");
+              .text(", normalized by");
+
+          buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/gunfire_n.html")
+              .append("text")
+              .attr("x", 102)
+              .attr("y", 198)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text("[area]");
+
+          buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/boston/crime/gunfire_pop.html")
+              .append("text")
+              .attr("x", 133)
+              .attr("y", 198)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text("[population]");
+
+
+
 
         var key = svg.append("g").
           attr("width", 25).

@@ -31,7 +31,7 @@ var width = 960,
    height = 500;
 
 var colordata = {};
-d3.csv("gunfire_n.csv", function(error, data)
+d3.csv("personal_pop.csv", function(error, data)
   {
     data.forEach( function(d) { colordata[d.zip] = d.value;} );
 
@@ -39,7 +39,7 @@ d3.csv("gunfire_n.csv", function(error, data)
 );
 
 
-d3.csv("gunfire_n.csv", function(d)
+d3.csv("personal_pop.csv", function(d)
   {
     return {
       zip: +d.zip,
@@ -78,7 +78,7 @@ d3.csv("gunfire_n.csv", function(d)
               textbox.append("text")
               .attr('class','bold-this')
               .attr('y','40px')
-              .text('by Zip Code (area normalized)')
+              .text('by Zip Code (capita normalized)')
               textbox.append("text")
               .attr('y','60px')
               .attr('font-size','12px')
@@ -97,7 +97,6 @@ d3.csv("gunfire_n.csv", function(d)
               .attr('x','300px')
               .style("font-size", "7px")
               .text('last updated:' + update_time_string)
-
 
 
           });
@@ -119,6 +118,7 @@ d3.csv("gunfire_n.csv", function(d)
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
               .text(source_text);
+
 
         var buttonSourceALL=svg.append("g")
               .attr("transform","translate(10,10)")
@@ -186,6 +186,7 @@ d3.csv("gunfire_n.csv", function(d)
               .style("font-size", "11px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
+              .attr('class','bold-this')
               .text('[PERSONAL]');
 
           buttonSourceALL.append("a")
@@ -352,7 +353,6 @@ d3.csv("gunfire_n.csv", function(d)
               .style("font-size", "11px")
               .attr("dy", ".15em")
               .attr("text-anchor", "middle")
-              .attr('class','bold-this')
               .text('[GUNFIRE REPORTS]');
 
           buttonSourceALL.append("a")
@@ -470,7 +470,7 @@ d3.csv("gunfire_n.csv", function(d)
             { 
               var d = this.__data__;
               
-              return 'crime reports/sq-mile: ' + [colordata[d.properties.postalCode] + ' -- ' + d.properties.PO_NAME + ' (' + d.properties.postalCode + ')'];}
+              return 'crime reports/10,000 residents: ' + [colordata[d.properties.postalCode] + ' -- ' + d.properties.PO_NAME + ' (' + d.properties.postalCode + ')'];}
             }
           );
   	 });

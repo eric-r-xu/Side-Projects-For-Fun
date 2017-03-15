@@ -1,5 +1,5 @@
 
-# Eric Xu , 2017-02
+# Eric Xu , 2017-02, 2017-03
 
 import pandas as pd
 from pandas import DataFrame
@@ -24,7 +24,7 @@ all_data = pd.read_csv('/var/www/104.236.40.7/public_html/boston/crime/AllData.c
 ZipDF = pd.read_csv('/var/www/104.236.40.7/public_html/boston/crime/ZipDataBase.csv',
                     dtype={'zip': 'str'})
 
-
+# del ZipDF['population']
 html_text_all = (requests.get('http://www.universalhub.com/crime/index.html')).text
 
 html_text = html_text_all[html_text_all.find('<tbody>'):html_text_all.find('</tbody>')]
@@ -220,16 +220,11 @@ if maxDateNew[0:10] > maxDate[0:10]:
 
     GUNFIRE_REPORTS = ['Gunfire']
 
-    INCHOATE_CRIMES = ['Attempted bank robbery',
-    'Attempted armed robbery',
-    'Attempted kidnapping','Attempted murder','Attempted rape']
-
 
     L_PERSONAL_CRIMES = []
     L_PERSONAL_CRIMES_Sexual_Offenses = []
     L_PROPERTY_CRIMES = []
     L_GUNFIRE_REPORTS = []
-    L_INCHOATE_CRIMES = []
 
 
     for crime_type in all_data['crime_type']:
@@ -253,17 +248,11 @@ if maxDateNew[0:10] > maxDate[0:10]:
         else:
             L_GUNFIRE_REPORTS.append(0)
 
-        if crime_type in INCHOATE_CRIMES:
-            L_INCHOATE_CRIMES.append(1)
-        else:
-            L_INCHOATE_CRIMES.append(0)
-
 
     all_data['PERSONAL_CRIMES'] = L_PERSONAL_CRIMES
     all_data['PERSONAL_CRIMES_Sexual_Offenses'] = L_PERSONAL_CRIMES_Sexual_Offenses
     all_data['PROPERTY_CRIMES'] = L_PROPERTY_CRIMES
     all_data['GUNFIRE_REPORTS'] = L_GUNFIRE_REPORTS
-    all_data['INCHOATE_CRIMES'] = L_INCHOATE_CRIMES
 
 
     ## ALL CRIMES
@@ -278,53 +267,26 @@ if maxDateNew[0:10] > maxDate[0:10]:
     MergedDF = DataFrame.merge(ZipDF,newDF,on=['zip'],how='left')
     MergedDF = MergedDF.fillna(0)
 
-    new_value = []
+    value2 = []
+    value3 = []
 
-    MergedDF2 = MergedDF.copy()
-    MergedDF['new_value'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value2'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value3'] =  MergedDF['value']/MergedDF['population']
 
-    print '....'
+    DF1 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value']))
+    DF2 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value2']))
+    DF3 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value3']))
 
-    del MergedDF2['sqmiles']
-    del MergedDF['sqmiles']
-    del MergedDF['value']
+    DF1.columns = ['zip','value']
+    DF2.columns = ['zip','value']
+    DF3.columns = ['zip','value']
 
-    MergedDF.columns = ['zip','value']
-    MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/normalized.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/ZipData.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    DF1.to_csv('/var/www/104.236.40.7/public_html/boston/crime/ZipData.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    DF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/normalized.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    DF3.to_csv('/var/www/104.236.40.7/public_html/boston/crime/normalized_pop.csv',dtype={'zip': 'str'},float_format='%.2f', index = False)
     print 'finished ALL CRIMES'
 
 
-    ## PERSONAL_CRIMES
-    CRIMES_DF = all_data[all_data['PERSONAL_CRIMES']==1]
-    CRIMES_DF = CRIMES_DF.reset_index(drop = True)
-
-    newDF = pd.DataFrame(zip(CRIMES_DF['zip'].value_counts().sort_index().index,
-                             CRIMES_DF['zip'].value_counts().sort_index().values))
-
-    newDF.columns = ['zip','value']
-
-    MergedDF = DataFrame.merge(ZipDF,newDF,on=['zip'],how='left')
-    MergedDF = MergedDF.fillna(0)
-
-    new_value = []
-
-    MergedDF2 = MergedDF.copy()
-    MergedDF['new_value'] = MergedDF['value']/MergedDF['sqmiles']
-
-    print '....'
-
-    del MergedDF2['sqmiles']
-    del MergedDF['sqmiles']
-    del MergedDF['value']
-
-    MergedDF.columns = ['zip','value']
-    MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
-    print 'finished PERSONAL CRIMES'
-
 
     ## PERSONAL_CRIMES
     CRIMES_DF = all_data[all_data['PERSONAL_CRIMES']==1]
@@ -338,21 +300,23 @@ if maxDateNew[0:10] > maxDate[0:10]:
     MergedDF = DataFrame.merge(ZipDF,newDF,on=['zip'],how='left')
     MergedDF = MergedDF.fillna(0)
 
-    new_value = []
+    value2 = []
+    value3 = []
 
-    MergedDF2 = MergedDF.copy()
-    MergedDF['new_value'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value2'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value3'] =  MergedDF['value']/MergedDF['population']
 
-    print '....'
+    DF1 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value']))
+    DF2 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value2']))
+    DF3 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value3']))
 
-    del MergedDF2['sqmiles']
-    del MergedDF['sqmiles']
-    del MergedDF['value']
+    DF1.columns = ['zip','value']
+    DF2.columns = ['zip','value']
+    DF3.columns = ['zip','value']
 
-    MergedDF.columns = ['zip','value']
-    MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    DF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    DF1.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    DF3.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_pop.csv',dtype={'zip': 'str'},float_format='%.2f', index = False)
     print 'finished PERSONAL CRIMES'
 
 
@@ -370,24 +334,24 @@ if maxDateNew[0:10] > maxDate[0:10]:
     MergedDF = DataFrame.merge(ZipDF,newDF,on=['zip'],how='left')
     MergedDF = MergedDF.fillna(0)
 
-    new_value = []
+    value2 = []
+    value3 = []
 
-    MergedDF2 = MergedDF.copy()
-    MergedDF['new_value'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value2'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value3'] =  MergedDF['value']/MergedDF['population']
 
-    print '....'
+    DF1 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value']))
+    DF2 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value2']))
+    DF3 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value3']))
 
-    del MergedDF2['sqmiles']
-    del MergedDF['sqmiles']
-    del MergedDF['value']
+    DF1.columns = ['zip','value']
+    DF2.columns = ['zip','value']
+    DF3.columns = ['zip','value']
 
-    MergedDF.columns = ['zip','value']
-    MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_sexual_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_sexual.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    DF3.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_sexual_pop.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    DF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_sexual_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    DF1.to_csv('/var/www/104.236.40.7/public_html/boston/crime/personal_sexual.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished PERSONAL SEXUAL CRIMES'
-
-
 
 
     ## PROPERTY_CRIMES
@@ -402,21 +366,23 @@ if maxDateNew[0:10] > maxDate[0:10]:
     MergedDF = DataFrame.merge(ZipDF,newDF,on=['zip'],how='left')
     MergedDF = MergedDF.fillna(0)
 
-    new_value = []
+    value2 = []
+    value3 = []
 
-    MergedDF2 = MergedDF.copy()
-    MergedDF['new_value'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value2'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value3'] =  MergedDF['value']/MergedDF['population']
 
-    print '....'
+    DF1 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value']))
+    DF2 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value2']))
+    DF3 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value3']))
 
-    del MergedDF2['sqmiles']
-    del MergedDF['sqmiles']
-    del MergedDF['value']
+    DF1.columns = ['zip','value']
+    DF2.columns = ['zip','value']
+    DF3.columns = ['zip','value']
 
-    MergedDF.columns = ['zip','value']
-    MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/property_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/property.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    DF3.to_csv('/var/www/104.236.40.7/public_html/boston/crime/property_pop.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    DF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/property_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    DF1.to_csv('/var/www/104.236.40.7/public_html/boston/crime/property.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished PROPERTY CRIMES'
 
 
@@ -435,52 +401,23 @@ if maxDateNew[0:10] > maxDate[0:10]:
     MergedDF = DataFrame.merge(ZipDF,newDF,on=['zip'],how='left')
     MergedDF = MergedDF.fillna(0)
 
-    new_value = []
+    value2 = []
+    value3 = []
 
-    MergedDF2 = MergedDF.copy()
-    MergedDF['new_value'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value2'] = MergedDF['value']/MergedDF['sqmiles']
+    MergedDF['value3'] =  MergedDF['value']/MergedDF['population']
 
-    print '....'
+    DF1 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value']))
+    DF2 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value2']))
+    DF3 = pd.DataFrame(zip(MergedDF['zip'], MergedDF['value3']))
 
-    del MergedDF2['sqmiles']
-    del MergedDF['sqmiles']
-    del MergedDF['value']
-
-    MergedDF.columns = ['zip','value']
-    MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/gunfire_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/gunfire.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
+    DF1.columns = ['zip','value']
+    DF2.columns = ['zip','value']
+    DF3.columns = ['zip','value']
+    DF3.to_csv('/var/www/104.236.40.7/public_html/boston/crime/gunfire_pop.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    DF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/gunfire_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
+    DF1.to_csv('/var/www/104.236.40.7/public_html/boston/crime/gunfire.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
     print 'finished GUNFIRE CRIMES'
-
-
-    ## INCHOATE_CRIMES
-    CRIMES_DF = all_data[all_data['INCHOATE_CRIMES']==1]
-    CRIMES_DF = CRIMES_DF.reset_index(drop = True)
-
-    newDF = pd.DataFrame(zip(CRIMES_DF['zip'].value_counts().sort_index().index,
-                             CRIMES_DF['zip'].value_counts().sort_index().values))
-
-    newDF.columns = ['zip','value']
-
-    MergedDF = DataFrame.merge(ZipDF,newDF,on=['zip'],how='left')
-    MergedDF = MergedDF.fillna(0)
-
-    new_value = []
-
-    MergedDF2 = MergedDF.copy()
-    MergedDF['new_value'] = MergedDF['value']/MergedDF['sqmiles']
-
-    print '....'
-
-    del MergedDF2['sqmiles']
-    del MergedDF['sqmiles']
-    del MergedDF['value']
-
-    MergedDF.columns = ['zip','value']
-    MergedDF2.columns = ['zip','value']
-    MergedDF.to_csv('/var/www/104.236.40.7/public_html/boston/crime/inchoate_n.csv',dtype={'zip': 'str'}, float_format='%.2f',index = False)
-    MergedDF2.to_csv('/var/www/104.236.40.7/public_html/boston/crime/inchoate.csv',dtype={'zip': 'str'},float_format='%.f', index = False)
-    print 'finished INCHOATE CRIMES'
 
 else:
     print 'no updates found'
