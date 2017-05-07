@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+#boroughs {
+  stroke: black;
+	stroke-width: 1px;
+	fill: white;
+}
+
+.bold-this {
+  fill: black;
+  font-weight: 700;
+  font-size: 22px;
+  font-family: OpenSans;
+}
+
+</style>
+
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.6.2.min.js"></script> 
+<script type="text/javascript" src="http://www.dartmouth.edu/~ericxu/jquery.tipsy.js"></script>
+<link href="http://www.dartmouth.edu/~ericxu/tipsy.css" rel="stylesheet" type="text/css" />
+<head>
+<FORM>
+<INPUT TYPE="button" onClick="history.go(0)" VALUE="Refresh">
+</FORM>
+</head>
+<body>
+<script>
+var width = 960,
+   height = 500;
+
+var colordata = {};
+d3.csv("ZipData30_Norm_Area.csv", function(error, data)
+  {
+    data.forEach( function(d) { colordata[d.zip] = d.value;} );
+
+  }
+);
+
+
+d3.csv("ZipData30_Norm_Area.csv", function(d)
+  {
+    return {
+      zip: +d.zip,
+      value: +d.value
+    };
+  },
+  function(error, data) 
+    {
+      var maxScale = (d3.max(data, function (d) 
+        { 
+          return d.value; 
+        }
+      ));
+      var color = d3.scale.linear()
+        .range(['white','#DE6FA1','#702963'])
+        .domain([0,(maxScale/2),maxScale]);
+      var svg = d3.select("body").append("svg")
+        .attr("width", width)
+        .attr("height", height);
+      var offset=16;
+      d3.json("dallas.geojson", function(error, nyb) 
+        {
+          
+          
+          d3.csv("displaydates_dallas.csv", function(data2) {
+            console.log(data2[0]);
+            var min_date_string=data2[0].mindate30;
+            var max_date_string=data2[0].maxdate30;
+            var update_time_string=data2[0].updatetime;
+            var textbox=svg.append("g")
+              .attr("transform","translate(10,10)")
+              textbox.append("text")
+              .attr('class','bold-this')
+              .attr('y','15px')
+              .text("Dallas Police Reports")
+              textbox.append("text")
+              .attr('class','bold-this')
+              .attr('y','40px')
+              .text("by Zip Code (area normalized)")
+              textbox.append("text")
+              .attr('y','60px')
+              .attr('font-size','12px')
+              .text(min_date_string + ' to ' + max_date_string)
+              textbox.append("text")
+              .attr('y','420px')
+              .attr('font-size','12px')
+              .text('0 / no data')
+              textbox.append("text")
+              .attr('y','297px')
+              .attr('x','12px')
+              .attr('font-size','12px')
+              .text('max')
+              textbox.append("text")
+              .attr('y','10px')
+              .attr('x','300px')
+              .style("font-size", "7px")
+              .text('last updated:' + update_time_string)
+
+
+          });
+
+          var source_text = "data source: Dallas Open Data";
+          // draw text on the screen
+          var buttonSource=svg.append("g")
+              .attr("transform","translate(10,10)")
+               buttonSource.append("text")
+          buttonSource.append("a")
+              .attr("xlink:href", "https://www.dallasopendata.com/Public-Safety/Police-Incidents/tbnj-w5hb/data")
+              .append("text")
+              .attr("x", 50)
+              .attr("y", 75)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text(source_text);
+
+
+
+
+
+        var buttonSourceALL=svg.append("g")
+              .attr("transform","translate(10,10)")
+               buttonSourceALL.append("text")
+
+
+        buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/index30.html")
+              .append("text")
+              .attr("x", 51)
+              .attr("y", 99)
+              .style("fill", "black")
+              .style("font-size", "11px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[last 30 days in dataset]');
+
+
+        buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/index365.html")
+              .append("text")
+              .attr("x", 44)
+              .attr("y", 121)
+              .style("fill", "black")
+              .style("font-size", "11px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[last year in dataset]');
+
+        buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/index.html")
+              .append("text")
+              .attr("x", 41)
+              .attr("y", 143)
+              .style("fill", "black")
+              .style("font-size", "11px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[complete dataset]');
+
+                buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/norm_pop.html")
+              .append("text")
+              .attr("x", 49)
+              .attr("y", 154)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[capita-normalized]');
+
+        buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/norm_area.html")
+              .append("text")
+              .attr("x", 110)
+              .attr("y", 154)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[area-normalized]');
+
+
+        buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/norm_pop_365.html")
+              .append("text")
+              .attr("x", 49)
+              .attr("y", 132)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[capita-normalized]');
+
+        buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/norm_area_365.html")
+              .append("text")
+              .attr("x", 110)
+              .attr("y", 132)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[area-normalized]');
+
+
+        buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/norm_pop_30.html")
+              .append("text")
+              .attr("x", 49)
+              .attr("y", 110)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[capita-normalized]');
+
+        buttonSourceALL.append("a")
+              .attr("xlink:href", "http://104.236.40.7/dallas/crime/norm_area_30.html")
+              .append("text")
+              .attr("x", 110)
+              .attr("y", 110)
+              .style("fill", "black")
+              .style("font-size", "8px")
+              .attr("dy", ".15em")
+              .attr("text-anchor", "middle")
+              .text('[area-normalized]');
+
+
+
+        var key = svg.append("g").
+          attr("width", 25).
+          attr("height", 120);
+
+        var legend = key.append("defs").append("svg:linearGradient").
+          attr("id", "gradient").
+          attr("x1", "100%").
+          attr("y1", "0%").
+          attr("x2", "100%").
+          attr("y2", "100%").
+          attr("spreadMethod", "pad");
+
+        legend.append("stop").
+          attr("offset", "0%").
+          attr("stop-color", "#702963").
+          attr("stop-opacity", 1);
+
+        legend.append("stop").
+          attr("offset", "50%").
+          attr("stop-color", "#DE6FA1").
+          attr("stop-opacity", 1);
+
+        legend.append("stop").
+          attr("offset", "100%").
+          attr("stop-color", "#ffffff").
+          attr("stop-opacity", 1);
+
+        key.append("rect").
+          attr("width",25).
+          attr("height", 120).
+          attr("y",300).
+          attr("x",20).
+          style("fill", "url(#gradient)").
+          attr("transform", "translate(0,10)");
+
+
+
+          
+          var projection = d3.geo.mercator()
+        					.center([-96.572488,32.7939629999999998])
+        					.scale(34000)
+        					.translate([(width) / 2, (height)/2]);
+
+          var path = d3.geo.path()
+      			.projection(projection);
+
+
+          var areas =	svg.append("g")
+        		.attr("id", "boroughs")
+        		.selectAll(".state")
+        		.data(nyb.features)
+        		.enter().append("svg:g")
+                        .attr("class", "zipcode");
+                        areas.append("path")
+        		.attr("class", function(d){ return "zippath"; })
+            .attr("fill", function(d){ return color(colordata[d.properties.postalCode]);})
+        		.attr("d", path);
+          console.log(nyb)
+
+          $('.zipcode').tipsy
+          (
+            {
+              gravity: 'w',
+              html: true,
+              title: function()
+            { 
+              var d = this.__data__;
+              
+              return d.properties.PO_NAME + ' (' + d.properties.postalCode + ') ' + ' police reports / sq km: ' + d3.format(".1f")(colordata[d.properties.postalCode]);}
+            }
+          );
+  	 });
+  }
+);
+</script>
+</body>
+</html>

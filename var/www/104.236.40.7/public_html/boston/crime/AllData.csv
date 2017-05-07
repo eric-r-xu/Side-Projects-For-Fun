@@ -1,4 +1,100 @@
 datetime,title,crime_type,address,zip
+2017-05-05T22:45:00-04:00,Person stabbed to death in Dorchester,Murder,5 Groom St.,02125
+2017-05-05T21:15:00-04:00,Two dead in South Boston penthouse; police shoot suspect,Murder,141 Dorchester Ave.,02127
+2017-05-03T21:54:00-04:00,Two shot in Roxbury,Shooting,115 Dale St.,02119
+2017-05-03T06:00:00-04:00,Dorchester minister charged with drug trafficking,Illegal drug possession,266 Quincy St.,02125
+2017-05-03T02:00:00-04:00,Two stabbed in the Fenway overnight; suspect arrested,Stabbing,111 Gainsborough St.,02115
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,Gunfire,Rockland St. and Hewes St.,02119
+2017-04-30T03:30:00-04:00,Cyclist seriously injured in Back Bay hit and run,Hit and run,Commonwealth Ave. and Clarendon St.,02116
+2017-04-30T00:05:00-04:00,One shot in Egleston Square,Shooting,3100 Washington St.,02119
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-28T22:30:00-04:00,Three shot in Dorchester,Shooting,4 Trull St.,02125
+2017-04-27T21:57:00-04:00,Man shot to death on Cedar Street in Mattapan,Murder,55 Cedar St.,02126
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-27T02:40:00-04:00,Four stabbed overnight in East Boston,Stabbing,Porter St. and Bennington St.,02128
+2017-04-21T20:55:00-04:00,17-year-old shot to death in Roxbury,Murder,180 Ruggles St.,02120
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-25T18:25:00-04:00,Man shot in the head in Jamaica Plain,Shooting,1 Metcalf Ct.,02130
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-24T20:00:00-04:00,Person shot on Columbia Road in Dorchester,Shooting,Columbia Rd. and Devon St.,02121
+2017-04-23T23:00:00-04:00,Man shot in Dorchester,Shooting,39 Creston St.,02121
+2017-04-23T20:37:00-04:00,Three shot in Dorchester; one dies,Murder,22 Thane St.,02124
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-23T18:40:00-04:00,Woman shot in the ankle on Walnut Park,Shooting,79 Walnut Park,02119
+2017-04-23T18:30:00-04:00,Four cops injured subduing man they say was beating a neighbor,Assault and battery with a dangerous weapon,149 Hemenway St.,02115
+2017-04-21T20:55:00-04:00,18-year-old shot to death in Roxbury,Murder,180 Ruggles St.,02120
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-21T20:55:00-04:00,Person shot in Roxbury,Shooting,180 Ruggles St.,02120
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-19T16:55:00-04:00,Man stabbed in Mattapan,Stabbing,Alpine St. and River St.,02136
+2017-04-15T19:30:00-04:00,Man charged with sexual attack on the Orange Line,Indecent assault and battery,Winter St. and Washington St.,02108
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-03-12T17:15:00-04:00,Man charged with chomping cop trying to get him to pay his bar bill at East Boston eatery,Assault and battery,65 Maverick Sq.,02128
+2017-04-16T19:00:00-04:00,Man slashed in the neck with a broken bottle at Roslindale soccer field,Stabbing,347 Hyde Park Ave.,02131
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-14T15:15:00-04:00,"Police: Teen near Burke High lifted sweatshirt to show cops he didn&#039;t have a gun, except he did",Illegal gun possession,60 Washington St.,02136
+2017-04-14T14:25:00-04:00,Shots fired on Edgewater Drive in Mattapan,Gunfire,47 Edgewater Dr.,02126
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-13T18:50:00-04:00,"Man rear-ends BPD vehicle in Hyde Park, keeps on going, abandons car in Roslindale, is arrested",Hit and run,900 Hyde Park Ave.,02136
+2017-04-13T17:45:00-04:00,"Two stabbed, one in the chest, at Roslindale park",Stabbing,Walworth St. and Tyndale St.,02131
+2017-04-13T16:15:00-04:00,Man shot to death on Gallivan Boulevard in Adams Village,Murder,511 Gallivan Blvd.,02124
+2017-04-12T20:00:00-04:00,Man shot repeatedly in Dorchester; pal helping him flee arrested on gun charges,Shooting,461 Columbia Rd.,02125
+2017-04-11T06:03:00-04:00,"SWAT team busts into Roxbury house; arrests three, seizes guns, drugs",Illegal gun possession,39 Nazing St.,02121
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-11T19:50:00-04:00,Person shot in South Boston,Shooting,Rev. Burke St. and Dorchester St.,02127
+2017-04-08T16:40:00-04:00,"Person stabbed, slashed in the face at Tremont and Park downtown",Stabbing,Park St. and Tremont St.,02108
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-08T16:40:00-04:00,Person slashed in the face at Tremont and Park downtown,Stabbing,Park St. and Tremont St.,02108
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-07T21:15:00-04:00,Two shot on Columbia Road near Franklin Park,Shooting,Columbia Rd. and Wolcott St.,02121
+2017-04-06T15:00:00-04:00,Worker at Dorchester program aimed at getting kids out of gangs and into college is shot,Shooting,222 Bowdoin St.,02125
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-05T21:20:00-04:00,"Police: Officers free woman forced into prostitution in Dorchester, arrest pimp and gun-toting pal",Illegal gun possession,204 Norfolk St.,02124
+2017-04-06T12:30:00-04:00,Shots fired near Malcom X Park,,Rockland St. and Hewes St.,02119
+2017-04-04T16:40:00-04:00,Woman sexually attacked in Fort Hill,Indecent assault and battery,Beech Glen St. and Fort Avenue,02119
+2017-04-02T01:30:00-04:00,"Gunfire that injured child was second gun incident in area yesterday; in first, cop tackled man with loaded gun",Illegal gun possession,22 Fenno St.,02119
+2017-03-27T17:30:00-04:00,Police looking for man they say threatened a woman with a knife on the Orange Line at Stony Brook,Assault with a dangerous weapon,180 Lamartine St.,02130
+2017-03-08T15:51:00-05:00,Man sought in connection with shooting on Quincy Street in Dorchester last month,Shooting,225 Quincy St.,02121
+2017-02-16T20:00:00-05:00,Logan worker from Mattapan faces federal coke-distribution charges,Illegal drug possession,Tremont St. and West Brookline St.,02118
+2017-04-02T21:35:00-04:00,Little kid shot in Roxbury,Shooting,14 Copeland St.,02119
+2017-04-01T16:35:00-04:00,"Police: Driver speeds away from traffic stop in Dorchester during storm, crashes; passenger had a gun",Illegal gun possession,15 Neponset Ave.,02122
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-31T17:45:00-04:00,Mattapan brothers arrested before on drug charges arrested again on drug charges,Illegal drug possession,1670 Blue Hill Ave.,02126
+2017-03-31T10:00:00-04:00,"Roslindale father and son face variety of gun, drug charges",Illegal gun possession,158 Fawndale Rd.,02131
+2017-03-29T19:00:00-04:00,"That was a gun in his pocket, so he got arrested, police say",Illegal gun possession,Orton Marotta Way,02127
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-29T03:00:00-04:00,Guy sought for break in at North End trattoria,Break-in,143 Richmond St.,02109
+2017-03-28T14:30:00-04:00,"15-year-old arrested, loaded gun seized in Mattapan gang investigation",Illegal gun possession,Norfolk St.,
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-28T23:00:00-04:00,Shots fired in Dorchester,Gunfire,Chamblet St. and Hartford St.,02125
+2017-03-27T13:30:00-04:00,Police charge more than just food was on the menu at Charlestown eatery,Illegal drug possession,156 Bunker Hill St.,02129
+2017-03-27T12:00:00-04:00,"Vineyard duo&#039;s mainland trip ends in arrest outside a Mattapan drug house, police say",Illegal drug possession,Osprey Way,02124
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-26T13:55:00-04:00,Person slashed in the face in Codman Square,Stabbing,308 Talbot Ave.,02124
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-24T09:05:00-04:00,Gun-toting burglars make off with safe from Dorchester home,Illegal gun possession,151 Columbia Rd.,02121
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-23T10:40:00-04:00,Shots fired in Roxbury park,Gunfire,Moreland St. and Fairland St.,02119
+2017-03-22T08:15:00-04:00,Police: Armed robbery and crack-dealer suspect punches cop in face in Roxbury,Assault and battery,23 Juniper St.,02119
+2017-02-20T00:50:00-05:00,"Guy spills drink on DJ&#039;s equipment at Brighton pub, then he and pals beat DJ up",Assault and battery with a dangerous weapon,338 Washington St.,02135
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-20T22:15:00-04:00,Shots fired in Roxbury,Gunfire,Cheney St. and Hartwell St.,02121
+2017-03-20T16:55:00-04:00,Gunfire on Washington Street in Dorchester,Gunfire,Washington St. and Eldon St.,02121
+2017-03-18T23:45:00-04:00,Gunfire leads to two arrests in Dorchester,Illegal gun possession,Jerome St. and Cushing St.,02125
+2017-03-18T23:45:00-04:00,Gunfire leads to two arrests in Dorchester,Illegal gun possession,Bowdoin St. and Norton St.,02122
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-19T22:25:00-04:00,Man stabbed in Downtown Crossing,Stabbing,Winter St. and Winter Pl.,02108
+2017-03-19T18:10:00-04:00,Man shot in the leg on Lorne Street in Dorchester,Gunfire,32 Lorne St.,02124
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-17T23:30:00-04:00,Woman shot in leg with paintball in Grove Hall drive-by,Assault and battery with a dangerous weapon,Blue Hill Ave. and Devon St.,02121
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-16T17:50:00-04:00,"Driver hits kid in Mattapan, keeps on going, but doesn&#039;t get far",Hit and run,Blue Hill Avenue and Fessenden Street,02126
+2017-03-15T22:30:00-04:00,Woman shot at Charlestown pizza place,Shooting,106 Bunker Hill St.,02129
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-15T22:30:00-04:00,Person shot at Charlestown pizza place,Shooting,106 Bunker Hill St.,02129
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
+2017-03-13T22:10:00-04:00,"Police pull loaded gun, baby from car parked in front of Codman Square hydrant",Illegal gun possession,Washington St. and Southern Ave.,02124
+2017-01-11T17:18:00-05:00,Woman not attacked while jogging around Chestnut Hill Reservoir: Large tree branch fell on her head,,,
 2017-03-10T05:16:00-05:00,Man spots two guys breaking into his Dorchester home via his surveillance camera; now they&#039;re in custody,Illegal gun possession,231 Washington St.,02111
 2017-03-06T18:30:00-05:00,Man sought for sexual assault in East Boston,Indecent assault and battery,Brooks Street,02128
 2017-03-06T13:55:00-05:00,Guys claiming to have bombs holding up banks,Bank robbery,391 Market St.,02135
