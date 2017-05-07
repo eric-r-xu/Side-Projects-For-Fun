@@ -1,4 +1,4 @@
-# Eric Xu, 2017-04
+# Eric Xu, 2017-04, 2017-05
 
 import glob
 import gc
@@ -13,7 +13,7 @@ from datetime import timedelta
     print each'''
 
 print 'retrieving latest data'
-urllib.urlretrieve ("https://www.dallasopendata.com/api/views/tbnj-w5hb/rows.csv", "Police_Incidents.csv")
+urllib.urlretrieve ("https://www.dallasopendata.com/api/views/tbnj-w5hb/rows.csv", "/var/www/104.236.40.7/public_html/dallas/crime/Police_Incidents.csv")
 print 'finished retrieving latest data'
 
 
@@ -21,6 +21,17 @@ data = pd.read_csv('/var/www/104.236.40.7/public_html/dallas/crime/Police_Incide
 pop_area = pd.read_csv('/var/www/104.236.40.7/public_html/dallas/crime/ZipDataBase.csv')
 
 newDates = []
+
+# filtering out data with no dates or zip
+data = data.fillna(0)
+
+data = data[data['Date of Report']!=0]
+data = data.reset_index(drop = True)
+
+data = data[data['Zip Code']!=0]
+data = data.reset_index(drop = True)
+
+
 for each in data['Date of Report']:
     newDates.append(datetime.strptime(each[0:10], "%m/%d/%Y").strftime("%Y-%m-%d"))
  
