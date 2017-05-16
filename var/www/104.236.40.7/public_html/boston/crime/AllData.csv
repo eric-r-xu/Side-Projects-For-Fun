@@ -1,4 +1,16 @@
 datetime,title,crime_type,address,zip
+2017-05-14T13:20:00-04:00,Car with people in it shot at in Dorchester; people not hit,Gunfire,35 Downer Ave.,02125
+2017-05-13T22:55:00-04:00,Man shot to death on Nottingham Street in Dorchester,Murder,15 Nottingham St.,02121
+2017-05-13T16:15:00-04:00,Police say they busted up drug sale at West Roxbury gas station,Illegal drug possession,1779 Centre St.,02132
+2017-05-13T22:55:00-04:00,Man shot on Nottingham Street in Dorchester,Shooting,15 Nottingham St.,02121
+2017-05-13T22:25:00-04:00,Shots fired on Capen Street in Dorchester,Gunfire,82 Selden St.,02124
+2017-05-13T13:50:00-04:00,Daylight shooting injures two in Roxbury,Shooting,50 Waverly St.,02135
+2017-05-12T06:39:00-04:00,Person stabbed in Mattapan,Stabbing,10 Orlando St.,02126
+2017-05-09T23:38:00-04:00,Man shot at South Boston project,Shooting,57 Orton Marotta Way,02127
+2017-05-05T23:40:00-04:00,Two stabbed in Roxbury,Stabbing,Mount Pleasant Terrace,02119
+2017-05-05T22:22:00-04:00,Man stabbed to death in Dorchester,Murder,5 Groom St.,02125
+2017-05-05T21:49:00-04:00,Man shot to death in Mattapan; Boston&#039;s fourth murder victim on Friday,Murder,46 Rexford St.,02126
+2017-05-05T20:38:00-04:00,Two dead in South Boston penthouse; police shoot suspect,Murder,141 Dorchester Ave.,02127
 2017-05-05T22:45:00-04:00,Person stabbed to death in Dorchester,Murder,5 Groom St.,02125
 2017-05-05T21:15:00-04:00,Two dead in South Boston penthouse; police shoot suspect,Murder,141 Dorchester Ave.,02127
 2017-05-03T21:54:00-04:00,Two shot in Roxbury,Shooting,115 Dale St.,02119

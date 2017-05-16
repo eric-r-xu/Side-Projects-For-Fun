@@ -1,5 +1,4 @@
-
-# Eric Xu , 2017-02
+# Eric Xu , 2017-02, 2017-05
 
 
 import pandas as pd
@@ -24,7 +23,9 @@ print 'processing latest data'
 response = requests.get('https://data.cityofnewyork.us/resource/qiz3-axqb.json')
 
 data_latest = pd.read_json(response.text)
-
+print data_latest.columns
+data_latest = data_latest.drop_duplicates(['unique_key'])
+data_latest = data_latest.reset_index(drop = True)
 
 ZipStats_latest = pd.DataFrame(zip(data_latest['zip_code'].value_counts().index,
                                    data_latest['zip_code'].value_counts().values))
@@ -84,6 +85,8 @@ print 'done processing latest data'
 
 print 'loading all data'
 data_all = pd.read_csv('/var/www/104.236.40.7/public_html/nyc/collisions/AllData.csv')
+data_all = data_all.drop_duplicates(['UNIQUE KEY'])
+data_all = data_all.reset_index(drop = True)
 print 'done loading all data'
 
 # making sure data_all dates are correctly formated
@@ -756,6 +759,8 @@ if len(new_dates) > 0:
 
     
     print 'saving all data'
+    data_all = data_all.drop_duplicates(['UNIQUE KEY'])
+    data_all = data_all.reset_index(drop = True)
     data_all.to_csv('/var/www/104.236.40.7/public_html/nyc/collisions/AllData.csv', index = False)
     print 'finished saving all data'
 
@@ -768,7 +773,8 @@ if len(new_dates) > 0:
     
     data_month = data_all[data_all['DATE']>=MonthFilter]
     data_month = data_month.reset_index(drop = True)
-    
+    data_month = data_month.drop_duplicates(['UNIQUE KEY'])
+    data_month = data_month.reset_index(drop = True)
     
     ZipStats_month = pd.DataFrame(zip(data_month['ZIP CODE'].value_counts().index,
                                       data_month['ZIP CODE'].value_counts().values))
@@ -798,7 +804,6 @@ if len(new_dates) > 0:
     
     # outputting ZipData.csv for month
     ZipDataBase.to_csv('/var/www/104.236.40.7/public_html/nyc/collisions/month/ZipData.csv', index = False)
-
 
 
     # normalizing collisions by zip code land area
@@ -845,7 +850,18 @@ if len(new_dates) > 0:
     
     # all 
     print 'processing all data'
+
+
+    maxDate = pd.Timestamp(max(data_all['DATE']))
+    YearFilter = str(maxDate - timedelta(days=364))[0:10]
     
+    data_all = data_all[data_all['DATE']>=YearFilter]
+    data_all = data_all.reset_index(drop = True)
+    data_all = data_all.drop_duplicates(['UNIQUE KEY'])
+    data_all = data_all.reset_index(drop = True)
+    
+
+
     ZipStats_all = pd.DataFrame(zip(data_all['ZIP CODE'].value_counts().index,
                                       data_all['ZIP CODE'].value_counts().values))
     
