@@ -1,6 +1,7 @@
 ##############################################################
 # Coding Challenge TripleByte
 ##############################################################
+# MINIMUM DELETE EDIT DISTANCE BETWEEN 2 STRINGS
 # Write a function that returns the *MINIMUM* delete edit distance of 2 strings
 # via the sum of each removed character's unicode code point value (i.e. 'a' = 97).
 # For example, the strings "cata" and "cat" have a minimum delete edit distance of 97 
@@ -162,6 +163,6 @@ def minimum_delete_edit_distance(str1,str2,counter):
         'RECURSION'
         
         
-        return compare_two_strings(str1,str2,counter)
+        return minimum_delete_edit_distance(str1,str2,counter)
     
-print compare_two_strings(str1,str2,0)    
+print minimum_delete_edit_distance(str1,str2,0)    
