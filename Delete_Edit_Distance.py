@@ -1,28 +1,33 @@
 ##############################################################
 # Coding Challenge TripleByte
 ##############################################################
-# Write a function that returns the delete edit distance of 2 strings
-# via the sum of each removed character's unicode code point value (i.e. 'a' = 97)
-# Example "cat" and "ct" is edit distance 97 cause you just need to remove the
-# 'a' character to make the strings equivalent
+# Write a function that returns the *MINIMUM* delete edit distance of 2 strings
+# via the sum of each removed character's unicode code point value (i.e. 'a' = 97).
+# For example, the strings "cata" and "cat" have a minimum delete edit distance of 97 
+# because you need to remove the 'a' character to make the strings equivalent.
+# Two strings with no similar characters (example: "hi" and "bye") would have
+# a delete edit distance equivalent to the sum of all the unicode point values
+# of both strings (i.e. "h", "i", "b", "y", "e").
 
+###### STRING EXAMPLES #####
+str1 = 'troughs'
+str2 = 'through'
 
-str1 = 'cAt'
-str2 = 'cat'
-
+# counter counts the number of character changes made
 counter = 0
 global counter
+
 print '--------------------------------------'
 print 'starting strings'
 print 'str1 = ' + str1 + ' , str2 = ' + str2
 print '--------------------------------------'
 
-def compare_two_strings(str1,str2,counter):
+def minimum_delete_edit_distance(str1,str2,counter):
     if counter == 0:
         original_str1 = str1
         original_str2 = str2
     
-    # finding letters not found in one string or the other
+    # finding unsimilar characters from both strings
     diff_set = set(str1).symmetric_difference(set(str2))
     print 'diff_set: ' + str(diff_set)
     for each in eval(str(diff_set)):
@@ -34,39 +39,30 @@ def compare_two_strings(str1,str2,counter):
     print 'new str1: ' + str1 + ' , new str2: ' + str2
     #######
     
-    # each1_list stores the max characters found in str1 that can be found
-    # in str2
-    # each1_type stores position of a letter after the first (1..n) in str1
-    # each1_length stores the length (1...n) from each1_type position
-    each1_list = []
-    each1_type = []
-    each1_length = []
-    # looping through 1..n letters of str1
+    each1_list = []     # character length (1..n) found in string2 from a string1 section (maximizing for this)
+    each1_type = []     # starting position of string1 section (e.g. 0 means string1 section starts at first character of string1)
+    each1_length = []   # length (1..n) from starting position
     for each1 in range(1, len(str1) + 1):
-        # truncating str1 to see if it's in str2
         temp = str1[0:each1]
         if str2.find(temp) >= 0:
             each1_list.append(each1)
             each1_type.append(0)
             each1_length.append(len(temp))
 
-    
-    # position of removal (1 = 2nd letter)
     for i in range(1, len(str1)):
         # length of removal
         for j in range(i + 1, len(str1)):
             temp = list(str1)
             temp[i : j] = ''
             temp = ''.join(temp)
-            # print 'new str1: ' + temp
             if str2.find(temp)>=0:
                 each1_list.append(len(temp))
                 each1_type.append(i)
                 each1_length.append(j - i)
                 
-    each2_list = []
-    each2_type = []
-    each2_length = []
+    each2_list = []     # character length (1..n) found in string2 from a string2 section (maximizing for this)
+    each2_type = []     # starting position of string2 section (e.g. 0 means string2 section starts at first character of string2)
+    each2_length = []   # length (1..n) from starting position
     for each2 in range(1, len(str2) + 1):
         temp = str2[0:each2]
         if str1.find(temp) >= 0:
@@ -85,9 +81,8 @@ def compare_two_strings(str1,str2,counter):
                 each2_type.append(i)
                 each2_length.append(j-i)
                     
-
     try:
-        # use either str1 or str2 that preserves the most common letters
+        # use string1 or string2 section that preserves the most common characters
         if (max(each2_list) > max(each1_list)):
 
             m = max(each2_list)
