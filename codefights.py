@@ -85,3 +85,39 @@ def rotateImage(a):
                     else:
                         three_by_three_dict[each] = 1
     return True
+
+  
+# A cryptarithm is a mathematical puzzle for which the goal is to find the correspondence between letters and digits, 
+# such that the given arithmetic equation consisting of letters holds true when the letters are converted to digits.
+# You have an array of strings crypt, the cryptarithm, and an an array containing the mapping of letters and digits, solution. 
+# The array crypt will contain three non-empty strings that follow the structure: [word1, word2, word3], which should be 
+# interpreted as the word1 + word2 = word3 cryptarithm.
+# If crypt, when it is decoded by replacing all of the letters in the cryptarithm with digits using the mapping in solution, 
+# becomes a valid arithmetic equation containing no numbers with leading zeroes, the answer is true. 
+# If it does not become a valid arithmetic solution, the answer is false.  
+def isCryptSolution(crypt, solution):
+    solution_dict = {}
+    for each in solution:
+        solution_dict[each[0]] = each[1]
+        
+    first_sum_num = ''
+    second_sum_num = ''
+    sum_num = ''
+    for each in crypt[0]:
+        first_sum_num = ''.join([first_sum_num, solution_dict[each]])
+    for each in crypt[1]:
+        second_sum_num = ''.join([second_sum_num, solution_dict[each]])
+    for each in crypt[2]:
+        sum_num = ''.join([sum_num, solution_dict[each]])
+    
+    if (len(first_sum_num) > 1 and first_sum_num[0] == '0'):
+        return False
+    elif (second_sum_num[0] == '0' and  len(second_sum_num) > 1):
+        return False
+    elif sum_num[0] == '0' and len(sum_num) > 1:
+        return False
+    else:
+        if int(first_sum_num) + int(second_sum_num) == int(sum_num):
+            return True
+        else:
+            return False
