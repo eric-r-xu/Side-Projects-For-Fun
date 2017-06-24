@@ -28,3 +28,15 @@ def firstNotRepeatingCharacter(s):
     if dict_var[each] == 1:
       return each
   return '_'
+
+# You are given an n x n 2D matrix that represents an image. Rotate the image by 90 degrees (clockwise).
+def rotateImage(a):
+    # assume len and width the same
+    len_a = len(a)
+    recreated_Image = []
+    for i in range(0, len_a):
+        temp = []
+        for j in range(1, len_a+1):
+            temp.append(a[len_a - j][i])
+        recreated_Image.append(temp)  
+    return recreated_Image
