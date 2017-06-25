@@ -1,3 +1,4 @@
+################# ARRAYS #################
 # Given an array a that contains only numbers in the range from 1 to a.length, find the first duplicate number for which the 
 # second occurrence has the minimal index. In other words, if there are more than 1 duplicated numbers, return the number 
 # for which the second occurrence has a smaller index than the second occurrence of the other number does. 
@@ -121,3 +122,28 @@ def isCryptSolution(crypt, solution):
             return True
         else:
             return False
+################# LINKED LISTS #################
+# Given a singly linked list of integers l and a non-negative integer k, remove all elements from 
+# list l that have a value equal to k.
+def removeKFromList(l,k):
+	# iterating through linked list
+	a = []
+	while True:
+		if l == None:
+			break
+		if l.value != k:
+			a.append(l.value)
+		l = l.next
+
+	t = ListNode(None)
+	r = ListNode(None)
+
+	if len(a)>0:
+		for i in (reversed(range(0, len(a)))):
+			r = t
+			t = ListNode(a[i])
+			if i < len(a) - 1:
+				t.next = r
+		return t
+	else:
+		return []
