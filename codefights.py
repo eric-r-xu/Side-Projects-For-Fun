@@ -147,3 +147,17 @@ def removeKFromList(l,k):
 		return t
 	else:
 		return []
+
+# Given a singly linked list of integers, determine whether or not it's a palindrome.
+def isListPalindrome(l):
+    # iterating through linked list
+    a = []
+    while True:
+        if l == None:
+            break
+        a.append(l.value)
+        l = l.next
+    if list(reversed(a))[0:len(a)/2] == a[0:len(a)/2]:
+        return True
+    else:
+        return False
