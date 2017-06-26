@@ -198,3 +198,35 @@ def addTwoHugeNumbers(a, b):
         if i < (ii)-1:
             t.next = r
     return t
+
+# Given two singly linked lists sorted in non-decreasing order, your task is to merge them. 
+# In other words, return a singly linked list, also sorted in non-decreasing order, that contains the 
+# elements from both original lists.
+def mergeTwoLinkedLists(l1, l2):
+    new_list = list()
+    counter = 0
+    while True:
+        if l1 == None:
+            break
+        new_list.append(l1.value)
+        counter += 1
+        l1 = l1.next
+    while True:
+        if l2 == None:
+            break
+        new_list.append(l2.value)
+        l2 = l2.next
+        counter += 1
+    
+    t = ListNode(None)
+    r = ListNode(None)
+    new_list = sorted(new_list)
+    if counter == 0:
+        return []
+    else:
+        for i in reversed(range(0,counter)):
+            r = t
+            t = ListNode(new_list[i])
+            if i < counter - 1:
+                t.next = r
+        return t
