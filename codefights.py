@@ -123,6 +123,12 @@ def isCryptSolution(crypt, solution):
         else:
             return False
 ################# LINKED LISTS #################
+# Definition for singly-linked list:
+# class ListNode(object):
+#   def __init__(self, x):
+#     self.value = x
+#     self.next = None
+
 # Given a singly linked list of integers l and a non-negative integer k, remove all elements from 
 # list l that have a value equal to k.
 def removeKFromList(l,k):
@@ -161,3 +167,34 @@ def isListPalindrome(l):
         return True
     else:
         return False
+
+# You're given 2 huge integers represented by linked lists. Each linked list element is a number from 0 to 9999 
+# that represents a number with exactly 4 digits. The represented number might have leading zeros. 
+# Your task is to add up these huge integers and return the result in the same format.
+def addTwoHugeNumbers(a, b):
+    # iterating through linked list
+    a_str = ''
+    b_str = ''
+    while True:
+        if a == None:
+            break
+        a_str = ''.join([a_str, str(a.value).zfill(4)])
+        a = a.next
+    while True:
+        if b == None:
+            break
+        b_str = ''.join([b_str, str(b.value).zfill(4)])
+        b = b.next
+    output = int(a_str) + int(b_str)
+    zz = len(str(output))
+    output = str(output).zfill(4*(((zz-1)/4)+1))
+    t = ListNode(None)
+    r = ListNode(None)
+    ii = ((zz-1)/4) + 1
+    for i in reversed(range(0,ii)):
+        r = t
+        t = ListNode(int(output[(i*4):(i+1)*4]))
+        print int(output[(i*4):(i+1)*4])
+        if i < (ii)-1:
+            t.next = r
+    return t
