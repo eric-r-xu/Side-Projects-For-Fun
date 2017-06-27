@@ -230,3 +230,28 @@ def mergeTwoLinkedLists(l1, l2):
             if i < counter - 1:
                 t.next = r
         return t
+
+# Given a linked list l, reverse its nodes k at a time and return the modified list. k is a positive integer that is 
+# less than or equal to the length of l. If the number of nodes in the linked list is not a multiple of k, then the nodes 
+# that are left out at the end should remain as-is.
+# You may not alter the values in the nodes - only the nodes themselves can be changed.
+def reverseNodesInKGroups(l, k):
+    new_list = list()
+    new_reversed_values = list()
+    new_normal_values = list()
+    counter = 0
+    while True:
+        if l == None:
+            new_list.extend(new_normal_values)
+            break
+        if counter < k:
+            new_reversed_values = [l.value] + new_reversed_values
+            new_normal_values.append(l.value)
+        l = l.next
+        counter += 1
+        if counter == k:
+            counter = 0
+            new_list.extend(new_reversed_values)
+            new_reversed_values = list()
+            new_normal_values = list()
+    return new_list
