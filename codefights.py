@@ -303,3 +303,35 @@ def groupingDishes(dishes):
         temp.extend(sorted(temp2_list))
         new_array.append(temp)
     return new_array   
+
+# Given an array strings, determine whether it follows the sequence given in the patterns array. In other words, 
+# there should be no i and j for which strings[i] = strings[j] and patterns[i] ≠ patterns[j] or for which 
+# strings[i] ≠ strings[j] and patterns[i] = patterns[j].
+def areFollowingPatterns(strings, patterns):
+    if len(strings) != len(patterns):
+        return False
+    else:
+        new_dict_1 = {}
+        new_dict_2 = {}
+        strings_numbered = []
+        patterns_numbered = []
+        counter_1 = 1
+        counter_2 = 1
+        for ii in range(0, len(strings)):
+            if strings[ii] in new_dict_1:
+                strings_numbered.append(new_dict_1[strings[ii]])
+            else:
+                new_dict_1[strings[ii]] = counter_1
+                strings_numbered.append(new_dict_1[strings[ii]])
+                counter_1 += 1
+            
+            if patterns[ii] in new_dict_2:
+                patterns_numbered.append(new_dict_2[patterns[ii]])
+            else:
+                new_dict_2[patterns[ii]] = counter_2
+                patterns_numbered.append(new_dict_2[patterns[ii]])
+                counter_2 += 1
+        if strings_numbered == patterns_numbered:
+            return True
+        else:
+            return False
