@@ -255,3 +255,14 @@ def reverseNodesInKGroups(l, k):
             new_reversed_values = list()
             new_normal_values = list()
     return new_list
+
+# Given a singly linked list of integers l and a non-negative integer n, move the last n list nodes to the 
+# beginning of the linked list.
+def rearrangeLastN(l, n):
+    new_list = list()
+    while True:
+        if l == None:
+            break
+        new_list.append(l.value)
+        l = l.next
+    return new_list[-n:] + new_list[0:-n]
