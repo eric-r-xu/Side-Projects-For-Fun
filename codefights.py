@@ -266,3 +266,40 @@ def rearrangeLastN(l, n):
         new_list.append(l.value)
         l = l.next
     return new_list[-n:] + new_list[0:-n]
+
+################# HASH TABLES #################
+# You have a list of dishes. Each dish is associated with a list of ingredients used to prepare it. You want to to 
+# group the dishes by ingredients, so that for each ingredient you'll be able to find all the dishes that contain it 
+# (if there are at least 2 such dishes).
+# Return an array where each element is a list with the first element equal to the name of the ingredient and all of 
+# the other elements equal to the names of dishes that contain this ingredient. The dishes inside each list should be 
+# sorted lexicographically. The result array should be sorted lexicographically by the names of the ingredients in 
+# its elements.
+def groupingDishes(dishes):
+    all_dishes = []
+    all_ingredients = []
+    popular_ingredients = set()
+    new_dict = {}
+    ingredient_dish_dict = {}
+    for each in dishes:
+        all_dishes.append(each[0])
+        for each_ingredient in each[1:]:
+            if each_ingredient in new_dict:
+                popular_ingredients.add(each_ingredient)
+            else:
+                new_dict[each_ingredient] = 1
+
+    popular_ingredients_list = list(popular_ingredients)
+    
+    new_array = []
+    for each_pop_ingredient in sorted(popular_ingredients):
+        temp = []
+        temp2 = set()
+        for each in dishes:
+            if each_pop_ingredient in each[1:]:
+                temp2.add(each[0])
+        temp2_list = list(temp2)
+        temp.append(each_pop_ingredient)
+        temp.extend(sorted(temp2_list))
+        new_array.append(temp)
+    return new_array   
