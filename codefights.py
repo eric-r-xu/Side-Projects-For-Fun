@@ -335,3 +335,18 @@ def areFollowingPatterns(strings, patterns):
             return True
         else:
             return False
+
+# Given an array of integers nums and an integer k, determine whether there are two distinct indices i and j in the 
+# array where nums[i] = nums[j] and the absolute difference between i and j is less than or equal to k.
+def containsCloseNums(nums, k):
+    new_dict = {}
+    for i in range(0, len(nums)):
+        if nums[i] in new_dict:
+            if i - new_dict[nums[i]] <= k:
+                return True
+                break
+            else:
+                new_dict[nums[i]] = i
+        else:
+            new_dict[nums[i]] = i
+    return False
