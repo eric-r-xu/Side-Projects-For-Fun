@@ -375,10 +375,10 @@ def possibleSums(coins, quantity):
                     baseCase = 0
                 elif baseCase >= 0:
                     baseCase += 1
-                # for sums[i] to be True and valid, i must pass the 
-		# base case and be within
-                # the quantity constraints of the coin_value
-                sums[i] = 0 <= baseCase <= coin_quant
+                # for sums[i] to be True, i must
+                # be within the quantity constraints of the coin_value
+                if baseCase >= 0 and coin_quant >= baseCase:
+                    sums[i] = True
     # sums must be subtracted by one because sums[0]=True 
     # is not designed to be counted as it also reflects sum=0
     return sum(sums) - 1
