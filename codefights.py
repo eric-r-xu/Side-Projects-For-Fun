@@ -350,3 +350,35 @@ def containsCloseNums(nums, k):
         else:
             new_dict[nums[i]] = i
     return False
+
+# You have a collection of coins, and you know the values of the coins and the quantity of each type of coin in it. 
+# You want to know how many distinct sums you can make from non-empty groupings of these coins.
+def possibleSums(coins, quantity):
+    # calculating sum over all coin quantities
+    sum_over_all = sum((map(lambda t: t[0] * t[1], zip(coins, quantity))))
+    # sums is a binary array for counting unique sums across all
+    # sum possibilities
+    sums = [False] * (sum_over_all + 1)
+    # sums[0] = True used for logical purposes...sum can't be 0 and
+    # index reflects sum
+    sums[0] = True
+    # iterating over all coin value quantities
+    for coin_value, coin_quant in zip(coins, quantity):
+        for b in range(0, coin_value):
+            baseCase = -1
+            # iterating over coin value intervals
+            for i in range(b, sum_over_all + 1, coin_value):
+                # sums[0] always True
+                # if i>0, logic requires finding True 
+                # base case with sum>0
+                if sums[i] == True:
+                    baseCase = 0
+                elif baseCase >= 0:
+                    baseCase += 1
+                # for sums[i] to be True and valid, i must pass the 
+		# base case and be within
+                # the quantity constraints of the coin_value
+                sums[i] = 0 <= baseCase <= coin_quant
+    # sums must be subtracted by one because sums[0]=True 
+    # is not designed to be counted as it also reflects sum=0
+    return sum(sums) - 1
