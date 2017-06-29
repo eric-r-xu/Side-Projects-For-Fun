@@ -382,3 +382,79 @@ def possibleSums(coins, quantity):
     # sums must be subtracted by one because sums[0]=True 
     # is not designed to be counted as it also reflects sum=0
     return sum(sums) - 1
+
+# Given a string str and array of pairs that indicates which indices in the string can be swapped, return the 
+# lexicographically largest string that results from doing the allowed swaps. You can swap indices any number of times.
+def swapLexOrder(str1, pairs):
+    if pairs == []:
+        return str1
+    else:
+        ## find clustered groups ##
+        set_values = set()
+        for pair in pairs:
+            set_values.add(pair[0])
+            set_values.add(pair[1])
+        # fast case... there are no overlapping
+        # indices across pairs, clustered groups are as is
+        if len(set_values) == 2 * len(pairs):
+            clustered_groups = pairs
+        # overlapping indices exist across pairs
+        # because len(set_values)<2*len(pairs)
+        # need to find clustered groups methodically
+        else:
+            # sort pairs ascending within pairs
+            sorted_pairs = []
+            for pair in pairs:
+                temp = sorted(pair)
+                sorted_pairs.append(temp)
+            # sort across pairs ascending
+            sorted_pairs = sorted(sorted_pairs)
+            clustered_groups = []
+            # dict1 stores whether 2 indexed pairs have been considered
+            dict1 = {} 
+            # dict2 stores whether an indexed pair has already been considered in
+            # the creation of any given clustered list
+            dict2 = {} 
+            print sorted_pairs
+            for index1, pair1 in enumerate(sorted_pairs):
+                # proceeds if pair has not yet been considered
+                if str(index1) not in dict2:
+                    temp = []
+                    temp.append(pair1[0])
+                    temp.append(pair1[1])
+                    # dict2 stores base pair
+                    dict2[str(index1)] = 1
+                    # loop through to ensure all possible pairs get linked to clustered group
+                    for jj in range(0, len(sorted_pairs)):
+                        for index2, pair2 in enumerate(sorted_pairs):
+                            if index1 != index2:
+                                if (pair2[0] in temp) or (pair2[1] in temp):
+                                        temp.append(pair2[0])
+                                        temp.append(pair2[1])
+                    
+                    for index2, pair2 in enumerate(sorted_pairs):
+                        if index1 != index2:
+                            # proceeds only if 2 indexed pairs have not yet
+                            # been considered
+                            if str(sorted([index1,index2])) not in dict1:
+                                # proceed if overlap exists
+                                if (pair2[0] in temp) or (pair2[1] in temp):
+                                    temp.append(pair2[0])
+                                    temp.append(pair2[1])
+                                    # dict2 stores index of comparison pair
+                                    dict2[str(index2)] = 1
+                                # dict1 makes note so that 2 pairs have been considered
+                                dict1[str(sorted([index1,index2]))] = 1
+                    print list(set(temp))
+                    clustered_groups.append(list(set(temp)))
+        str1 = list(str1)
+        for each_clustered_group in sorted(clustered_groups):
+            string_clump = ''
+            for each_index in each_clustered_group:
+                string_clump = ''.join([string_clump, str1[each_index-1]])
+            rearranged = sorted(string_clump, reverse = True)
+            counter = 0
+            for each_index in sorted(each_clustered_group):
+                str1[each_index - 1] = rearranged[counter]
+                counter += 1
+        return ''.join(str1)
