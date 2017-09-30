@@ -424,6 +424,7 @@ else:
 
     
 # filtering all_date to last 366 days in dataset
+all_data.to_csv('/tmp/all_data.csv', index = False)
 maxDate = pd.Timestamp(max(all_data['datetime']))
 DateFilter = str(maxDate - timedelta(days=365))
 all_data = all_data[all_data['datetime']>=DateFilter]
