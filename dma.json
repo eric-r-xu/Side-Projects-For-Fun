@@ -126,7 +126,7 @@
             "latitude": 34.4952755,
             "tvperc": 83.3,
             "dma": 790,
-            "dma1": "Albuquerque-Santa Fe, NM",
+            "dma1": "Albuquerque, NM",
             "cableperc": 38.9,
             "adsperc": 44.8,
             "longitude": -106.526644
@@ -525,7 +525,7 @@
             "latitude": 30.3724315,
             "tvperc": 92.1,
             "dma": 692,
-            "dma1": "Beaumont-Port Arthur, TX",
+            "dma1": "Beaumont-Port Author, TX",
             "cableperc": 50.4,
             "adsperc": 42.2,
             "longitude": -94.1330155
@@ -660,7 +660,7 @@
             "latitude": 33.5031,
             "tvperc": 93.4,
             "dma": 630,
-            "dma1": "Birmingham (Anniston and Tuscaloosa), AL",
+            "dma1": "Birmingham, AL",
             "cableperc": 48.7,
             "adsperc": 45.3,
             "longitude": -86.869635
@@ -857,7 +857,7 @@
             "latitude": 42.501023,
             "tvperc": 98.8,
             "dma": 506,
-            "dma1": "Boston, MA (Manchester, NH)",
+            "dma1": "Boston, MA",
             "cableperc": 87.2,
             "adsperc": 12.8,
             "longitude": -71.460493
@@ -969,7 +969,7 @@
             "latitude": 44.071301,
             "tvperc": 90.8,
             "dma": 523,
-            "dma1": "Burlington, VT-Plattsburgh, NY",
+            "dma1": "Burlington, VT",
             "cableperc": 52.5,
             "adsperc": 38.7,
             "longitude": -73.0368725
@@ -1055,7 +1055,7 @@
             "latitude": 42.331217,
             "tvperc": 86.5,
             "dma": 637,
-            "dma1": "Cedar Rapids-Waterloo-Iowa City & Dubuque, IA",
+            "dma1": "Cedar Rapids-Waterloo, IA",
             "cableperc": 55.4,
             "adsperc": 31.6,
             "longitude": -91.7493605
@@ -1084,7 +1084,7 @@
             "latitude": 39.9606635,
             "tvperc": 92.1,
             "dma": 648,
-            "dma1": "Champaign & Springfield-Decatur, IL",
+            "dma1": "Champaign-Springfield-Decatur, IL",
             "cableperc": 57.4,
             "adsperc": 35.2,
             "longitude": -89.0627055
@@ -1266,7 +1266,7 @@
             "latitude": 41.8048825,
             "tvperc": 92.2,
             "dma": 759,
-            "dma1": "Cheyenne, WY-Scottsbluff, NE",
+            "dma1": "Cheyenne, WY",
             "cableperc": 61.6,
             "adsperc": 30.8,
             "longitude": -104.3206125
@@ -1420,7 +1420,7 @@
             "latitude": 41.0958885,
             "tvperc": 94.2,
             "dma": 510,
-            "dma1": "Cleveland-Akron (Canton), OH",
+            "dma1": "Cleveland, OH",
             "cableperc": 70.2,
             "adsperc": 24.2,
             "longitude": -81.71123
@@ -1447,7 +1447,7 @@
             "latitude": 38.061384,
             "tvperc": 86.5,
             "dma": 752,
-            "dma1": "Colorado Springs-Pueblo, CO",
+            "dma1": "Colorado Springs, CO",
             "cableperc": 43.6,
             "adsperc": 43.5,
             "longitude": -104.0271685
@@ -1710,7 +1710,7 @@
             "latitude": 32.702473,
             "tvperc": 83.9,
             "dma": 623,
-            "dma1": "Dallas-Ft. Worth, TX",
+            "dma1": "Dallas-Fort Worth, TX",
             "cableperc": 48.5,
             "adsperc": 36.2,
             "longitude": -97.098903
@@ -1737,7 +1737,7 @@
             "latitude": 41.5680725,
             "tvperc": 87.7,
             "dma": 682,
-            "dma1": "Davenport, IA-Rock Island-Moline, IL",
+            "dma1": "Davenport-Rock Island-Moline, IL",
             "cableperc": 54.1,
             "adsperc": 34,
             "longitude": -90.4412815
@@ -1863,7 +1863,7 @@
             "latitude": 41.8822865,
             "tvperc": 83,
             "dma": 679,
-            "dma1": "Des Moines-Ames, IA",
+            "dma1": "Des Moines, IA",
             "cableperc": 45.2,
             "adsperc": 38.4,
             "longitude": -93.6950785
@@ -2023,7 +2023,7 @@
             "latitude": 47.169647,
             "tvperc": 81.6,
             "dma": 676,
-            "dma1": "Duluth, MN-Superior, WI",
+            "dma1": "Duluth, MN",
             "cableperc": 37.3,
             "adsperc": 44.6,
             "longitude": -91.7104225
@@ -2234,7 +2234,7 @@
             "latitude": 43.643882,
             "tvperc": 90.2,
             "dma": 513,
-            "dma1": "Flint-Saginaw-Bay City, MI",
+            "dma1": "Flint, MI",
             "cableperc": 59.6,
             "adsperc": 31,
             "longitude": -83.847331
@@ -2261,7 +2261,7 @@
             "latitude": 36.846642,
             "tvperc": 80.4,
             "dma": 866,
-            "dma1": "Fresno-Visalia, CA",
+            "dma1": "Fresno, CA",
             "cableperc": 34.7,
             "adsperc": 46.4,
             "longitude": -119.613123
@@ -2380,7 +2380,7 @@
             "latitude": 26.5720265,
             "tvperc": 94.9,
             "dma": 571,
-            "dma1": "Ft. Myers-Naples, FL",
+            "dma1": "Ft Myers, FL",
             "cableperc": 62.5,
             "adsperc": 33.5,
             "longitude": -81.6230635
@@ -2408,7 +2408,7 @@
             "latitude": 35.5031505,
             "tvperc": 89.5,
             "dma": 670,
-            "dma1": "Ft. Smith-Fayetteville-Springdale-Rogers, AR",
+            "dma1": "Ft Smith-Fay-Springfield, AR",
             "cableperc": 51.1,
             "adsperc": 38.7,
             "longitude": -94.202877
@@ -2434,7 +2434,7 @@
             "latitude": 41.0334615,
             "tvperc": 79,
             "dma": 509,
-            "dma1": "Ft. Wayne, IN",
+            "dma1": "Ft Wayne, IN",
             "cableperc": 45.1,
             "adsperc": 34.3,
             "longitude": -85.1430895
@@ -2558,7 +2558,7 @@
             "latitude": 38.425681,
             "tvperc": 84.9,
             "dma": 773,
-            "dma1": "Grand Junction-Montrose, CO",
+            "dma1": "Grand Junction, CO",
             "cableperc": 52.8,
             "adsperc": 32.5,
             "longitude": -108.2153545
@@ -2585,7 +2585,7 @@
             "latitude": 42.7892405,
             "tvperc": 86.4,
             "dma": 563,
-            "dma1": "Grand Rapids-Kalamazoo-Battle Creek, MI",
+            "dma1": "Grand Rapids, MI",
             "cableperc": 55.2,
             "adsperc": 31.6,
             "longitude": -85.624075
@@ -2945,7 +2945,7 @@
             "latitude": 26.311933,
             "tvperc": 69.7,
             "dma": 636,
-            "dma1": "Harlingen-Weslaco-Brownsville-McAllen, TX",
+            "dma1": "Harlingen, TX",
             "cableperc": 41,
             "adsperc": 29.3,
             "longitude": -98.157698
@@ -3025,7 +3025,7 @@
             "latitude": 41.612664,
             "tvperc": 98.3,
             "dma": 533,
-            "dma1": "Hartford & New Haven, CT",
+            "dma1": "Hartford, CT",
             "cableperc": 84.1,
             "adsperc": 15.1,
             "longitude": -72.659358
@@ -3189,7 +3189,7 @@
             "latitude": 34.7953925,
             "tvperc": 93.1,
             "dma": 691,
-            "dma1": "Huntsville-Decatur (Florence), AL",
+            "dma1": "Huntsville, AL",
             "cableperc": 56.8,
             "adsperc": 36.6,
             "longitude": -86.8583345
@@ -3489,7 +3489,7 @@
             "latitude": 37.2695535,
             "tvperc": 81,
             "dma": 603,
-            "dma1": "Joplin, MO-Pittsburg, KS",
+            "dma1": "Joplin-Pittsburg, MO",
             "cableperc": 36.1,
             "adsperc": 45.5,
             "longitude": -95.0098365
@@ -3832,7 +3832,7 @@
             "latitude": 41.282784,
             "tvperc": 89.6,
             "dma": 722,
-            "dma1": "Lincoln & Hastings-Kearney, NE",
+            "dma1": "Lincoln-Hastings, NE",
             "cableperc": 49.8,
             "adsperc": 40.2,
             "longitude": -99.257628
@@ -4578,7 +4578,7 @@
             "latitude": 25.439022,
             "tvperc": 93.9,
             "dma": 528,
-            "dma1": "Miami-Fort Lauderdale, FL",
+            "dma1": "Miami, FL",
             "cableperc": 69.9,
             "adsperc": 26.5,
             "longitude": -80.940626
@@ -4668,7 +4668,7 @@
             "latitude": 46.8731805,
             "tvperc": 90.2,
             "dma": 687,
-            "dma1": "Minot-Bismarck-Dickinson(Williston), ND",
+            "dma1": "Minot-Bismarck-Dickinson, ND",
             "cableperc": 60.4,
             "adsperc": 30.2,
             "longitude": -102.71806
@@ -4760,7 +4760,7 @@
             "latitude": 31.1061175,
             "tvperc": 91,
             "dma": 686,
-            "dma1": "Mobile, AL-Pensacola (Ft. Walton Beach), FL",
+            "dma1": "Mobile, AL",
             "cableperc": 51.7,
             "adsperc": 39.8,
             "longitude": -87.6151775
@@ -4799,7 +4799,7 @@
             "latitude": 32.1842885,
             "tvperc": 92.4,
             "dma": 628,
-            "dma1": "Monroe, LA-El Dorado, AR",
+            "dma1": "Monroe, LA",
             "cableperc": 46,
             "adsperc": 47,
             "longitude": -91.9321725
@@ -4855,7 +4855,7 @@
             "latitude": 32.0506805,
             "tvperc": 93.9,
             "dma": 698,
-            "dma1": "Montgomery-Selma, AL",
+            "dma1": "Montgomery, AL",
             "cableperc": 64,
             "adsperc": 30.4,
             "longitude": -86.7675715
@@ -4887,7 +4887,7 @@
             "latitude": 34.2987775,
             "tvperc": 91.3,
             "dma": 570,
-            "dma1": "Myrtle Beach-Florence, SC",
+            "dma1": "Florence-Myrtle Beach, SC",
             "cableperc": 66.6,
             "adsperc": 25.2,
             "longitude": -79.419767
@@ -5810,7 +5810,7 @@
             "latitude": 36.608336,
             "tvperc": 92.1,
             "dma": 544,
-            "dma1": "Norfolk-Portsmouth-Newport News, VA",
+            "dma1": "Norfolk-Portsmouth, VA",
             "cableperc": 69.5,
             "adsperc": 23.1,
             "longitude": -76.3720915
@@ -5987,7 +5987,7 @@
             "latitude": 28.6562235,
             "tvperc": 94.2,
             "dma": 534,
-            "dma1": "Orlando-Daytona Beach-Melbourne, FL",
+            "dma1": "Orlando, FL",
             "cableperc": 69.1,
             "adsperc": 26.2,
             "longitude": -81.4963015
@@ -6013,7 +6013,7 @@
             "latitude": 40.384083,
             "tvperc": 87,
             "dma": 631,
-            "dma1": "Ottumwa, IA-Kirksville, MO",
+            "dma1": "Ottumwa-Kirksville, IA",
             "cableperc": 48.6,
             "adsperc": 38.8,
             "longitude": -92.545142
@@ -6049,7 +6049,7 @@
             "latitude": 37.2352865,
             "tvperc": 91.2,
             "dma": 632,
-            "dma1": "Paducah, KY-Cape Girardeau, MO-Harrisburg, IL",
+            "dma1": "Paducah, KY",
             "cableperc": 36.6,
             "adsperc": 55.2,
             "longitude": -89.497325
@@ -6672,7 +6672,7 @@
             "latitude": 41.620932,
             "tvperc": 93.9,
             "dma": 521,
-            "dma1": "Providence, RI-New Bedford, MA",
+            "dma1": "Providence, RI",
             "cableperc": 84.8,
             "adsperc": 9.5,
             "longitude": -71.351281
@@ -6702,7 +6702,7 @@
             "latitude": 40.066065,
             "tvperc": 86.9,
             "dma": 717,
-            "dma1": "Quincy, IL-Hannibal, MO-Keokuk, IA",
+            "dma1": "Quincy, IL",
             "cableperc": 41,
             "adsperc": 46.4,
             "longitude": -91.1726125
@@ -6737,7 +6737,7 @@
             "latitude": 35.72255,
             "tvperc": 89.9,
             "dma": 560,
-            "dma1": "Raleigh-Durham (Fayetteville), NC",
+            "dma1": "Raleigh-Durham, NC",
             "cableperc": 55.6,
             "adsperc": 35.1,
             "longitude": -78.4212995
@@ -6935,7 +6935,7 @@
             "latitude": 42.9137715,
             "tvperc": 87.6,
             "dma": 538,
-            "dma1": "Rochester, MN-Mason City, IA-Austin, MN",
+            "dma1": "Rochester-Mason City-Austin, MN",
             "cableperc": 69.5,
             "adsperc": 18.6,
             "longitude": -77.387152
@@ -7044,7 +7044,7 @@
             "latitude": 38.7885185,
             "tvperc": 90.9,
             "dma": 862,
-            "dma1": "Sacramento-Stockton-Modesto, CA",
+            "dma1": "Sacramento, CA",
             "cableperc": 52.2,
             "adsperc": 39.6,
             "longitude": -120.9905465
@@ -7266,7 +7266,7 @@
             "latitude": 38.4477155,
             "tvperc": 92.6,
             "dma": 807,
-            "dma1": "San Francisco-Oakland-San Jose, CA",
+            "dma1": "San Francisco, CA",
             "cableperc": 65,
             "adsperc": 28.3,
             "longitude": -122.6193155
@@ -7309,7 +7309,7 @@
             "latitude": 34.844663,
             "tvperc": 92.4,
             "dma": 855,
-            "dma1": "Santa Barbara-Santa Maria-San Luis Obispo, CA",
+            "dma1": "Santa Barbara, CA",
             "cableperc": 58.4,
             "adsperc": 34.8,
             "longitude": -120.4100205
@@ -7650,7 +7650,7 @@
             "latitude": 34.181478,
             "tvperc": 86.9,
             "dma": 657,
-            "dma1": "Sherman, TX-Ada, OK",
+            "dma1": "Sherman, TX",
             "cableperc": 39.9,
             "adsperc": 47.8,
             "longitude": -96.2499835
@@ -7746,7 +7746,7 @@
             "latitude": 44.0133785,
             "tvperc": 89.5,
             "dma": 725,
-            "dma1": "Sioux Falls (Mitchell), SD",
+            "dma1": "Sioux Falls, SD",
             "cableperc": 63.3,
             "adsperc": 26.5,
             "longitude": -98.735199
@@ -7773,7 +7773,7 @@
             "latitude": 41.576527,
             "tvperc": 79.9,
             "dma": 588,
-            "dma1": "South Bend-Elkhart, IN",
+            "dma1": "South Bend, IN",
             "cableperc": 40.8,
             "adsperc": 39.6,
             "longitude": -86.062314
@@ -7895,7 +7895,7 @@
             "latitude": 40.055305,
             "tvperc": 86.6,
             "dma": 638,
-            "dma1": "St. Joseph, MO",
+            "dma1": "St Joseph, MO",
             "cableperc": 57.8,
             "adsperc": 29.4,
             "longitude": -94.8792055
@@ -7923,7 +7923,7 @@
             "latitude": 38.434253,
             "tvperc": 89.9,
             "dma": 609,
-            "dma1": "St. Louis, MO",
+            "dma1": "St Louis, MO",
             "cableperc": 50.5,
             "adsperc": 39.7,
             "longitude": -90.169254
@@ -7981,7 +7981,7 @@
             "latitude": 30.462299,
             "tvperc": 93,
             "dma": 530,
-            "dma1": "Tallahassee, FL-Thomasville, GA",
+            "dma1": "Tallahassee, FL",
             "cableperc": 55.1,
             "adsperc": 38.6,
             "longitude": -83.675708
@@ -8237,7 +8237,7 @@
             "latitude": 27.9989465,
             "tvperc": 92.8,
             "dma": 539,
-            "dma1": "Tampa-St. Petersburg (Sarasota), FL",
+            "dma1": "Tampa, FL",
             "cableperc": 78.9,
             "adsperc": 14.7,
             "longitude": -81.8973955
@@ -8482,7 +8482,7 @@
             "latitude": 36.732483,
             "tvperc": 93.6,
             "dma": 531,
-            "dma1": "Tri-Cities, TN-VA",
+            "dma1": "Tri-Cities, TN",
             "cableperc": 56.5,
             "adsperc": 37.5,
             "longitude": -82.468517
@@ -8503,7 +8503,7 @@
             "latitude": 31.923023,
             "tvperc": 87.1,
             "dma": 789,
-            "dma1": "Tucson (Sierra Vista), AZ",
+            "dma1": "Tucson, AZ",
             "cableperc": 48.3,
             "adsperc": 39.3,
             "longitude": -111.1907555
@@ -8587,7 +8587,7 @@
             "latitude": 32.1070105,
             "tvperc": 91.3,
             "dma": 709,
-            "dma1": "Tyler-Longview(Lufkin & Nacogdoches), TX",
+            "dma1": "Tyler-Longview, TX",
             "cableperc": 38,
             "adsperc": 53.7,
             "longitude": -94.8806935
@@ -8612,7 +8612,7 @@
             "latitude": 43.205527,
             "tvperc": 92.5,
             "dma": 526,
-            "dma1": "Utica, NY",
+            "dma1": "Utica-Rome, NY",
             "cableperc": 75.7,
             "adsperc": 17.4,
             "longitude": -75.026249
@@ -8708,7 +8708,7 @@
             "latitude": 39.127683,
             "tvperc": 94.1,
             "dma": 511,
-            "dma1": "Washington, DC (Hagerstown, MD)",
+            "dma1": "Washington, DC",
             "cableperc": 69.7,
             "adsperc": 25.1,
             "longitude": -77.904362
@@ -8864,7 +8864,7 @@
             "latitude": 27.096694,
             "tvperc": 96.8,
             "dma": 548,
-            "dma1": "West Palm Beach-Ft. Pierce, FL",
+            "dma1": "West Palm Beach, FL",
             "cableperc": 71.6,
             "adsperc": 26.8,
             "longitude": -80.6271745
@@ -8896,7 +8896,7 @@
             "latitude": 39.96655,
             "tvperc": 93.2,
             "dma": 554,
-            "dma1": "Wheeling, WV-Steubenville, OH",
+            "dma1": "Wheeling, WV",
             "cableperc": 69.8,
             "adsperc": 24.6,
             "longitude": -81.0435735
@@ -8922,7 +8922,7 @@
             "latitude": 33.9059285,
             "tvperc": 90.7,
             "dma": 627,
-            "dma1": "Wichita Falls, TX-Lawton, OK",
+            "dma1": "Wichita Falls, TX",
             "cableperc": 42.5,
             "adsperc": 48.8,
             "longitude": -99.039775
@@ -8949,7 +8949,7 @@
             "latitude": 38.672948,
             "tvperc": 88.4,
             "dma": 678,
-            "dma1": "Wichita-Hutchinson, KS Plus",
+            "dma1": "Wichita, KS",
             "cableperc": 60.7,
             "adsperc": 28.1,
             "longitude": -99.005353
@@ -9128,7 +9128,7 @@
             "latitude": 46.29578,
             "tvperc": 85.4,
             "dma": 810,
-            "dma1": "Yakima-Pasco-Richland-Kennewick, WA",
+            "dma1": "Yakima-Pasco, WA",
             "cableperc": 37.6,
             "adsperc": 48.3,
             "longitude": -119.748852
@@ -9178,7 +9178,7 @@
             "latitude": 32.751631,
             "tvperc": 81.3,
             "dma": 771,
-            "dma1": "Yuma, AZ-El Centro, CA",
+            "dma1": "Yuma, AZ",
             "cableperc": 38.3,
             "adsperc": 43.8,
             "longitude": -114.7199745
