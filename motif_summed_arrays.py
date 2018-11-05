@@ -139,3 +139,147 @@ motif_summed_result_filepath = './folder/motif_summed_result.csv'
 motif_summed_result_dataframe.to_csv(motif_summed_result_filepath,sep = ',')
 print ''
 print 'made it to the bitter end! in %.1f minutes ' % ((time.time() - t)/60.0)
+
+
+''' testing output: 
+baf_folders (method 1) = ['./folder/ttc1240.baf', './folder/vcap.baf', './folder/bt549.baf']
+
+baf_folders (method 2) = ['./folder/ttc1240.baf', './folder/vcap.baf', './folder/bt549.baf']
+
+baf_folders_name = ttc1240.baf
+
+./folder/ttc1240.baf directory has the following text files: ./folder/ttc1240.baf/TTC1240_BRG1_500bp_Top10000.fimo.1e-100.motifs.txt
+
+bash command = mkdir ./folder/ttc1240.baf/matrices
+dir already exists
+each_file = ./folder/ttc1240.baf/TTC1240_BRG1_500bp_Top10000.fimo.1e-100.motifs.txt
+
+progress ... 20/1945518 = 0.00 pct
+progress ... 50020/1945518 = 2.57 pct
+progress ... 100020/1945518 = 5.14 pct
+progress ... 150020/1945518 = 7.71 pct
+progress ... 200020/1945518 = 10.28 pct
+progress ... 250020/1945518 = 12.85 pct
+progress ... 300020/1945518 = 15.42 pct
+progress ... 350020/1945518 = 17.99 pct
+progress ... 400020/1945518 = 20.56 pct
+progress ... 450020/1945518 = 23.13 pct
+progress ... 500020/1945518 = 25.70 pct
+progress ... 550020/1945518 = 28.27 pct
+progress ... 600020/1945518 = 30.84 pct
+progress ... 650020/1945518 = 33.41 pct
+progress ... 700020/1945518 = 35.98 pct
+progress ... 750020/1945518 = 38.55 pct
+progress ... 800020/1945518 = 41.12 pct
+progress ... 850020/1945518 = 43.69 pct
+progress ... 900020/1945518 = 46.26 pct
+progress ... 950020/1945518 = 48.83 pct
+progress ... 1000020/1945518 = 51.40 pct
+progress ... 1050020/1945518 = 53.97 pct
+progress ... 1100020/1945518 = 56.54 pct
+progress ... 1150020/1945518 = 59.11 pct
+progress ... 1200020/1945518 = 61.68 pct
+progress ... 1250020/1945518 = 64.25 pct
+progress ... 1300020/1945518 = 66.82 pct
+progress ... 1350020/1945518 = 69.39 pct
+progress ... 1400020/1945518 = 71.96 pct
+progress ... 1450020/1945518 = 74.53 pct
+progress ... 1500020/1945518 = 77.10 pct
+progress ... 1550020/1945518 = 79.67 pct
+progress ... 1600020/1945518 = 82.24 pct
+progress ... 1650020/1945518 = 84.81 pct
+progress ... 1700020/1945518 = 87.38 pct
+progress ... 1750020/1945518 = 89.95 pct
+progress ... 1800020/1945518 = 92.52 pct
+progress ... 1850020/1945518 = 95.09 pct
+progress ... 1900020/1945518 = 97.66 pct
+baf_folders_name = vcap.baf
+
+./folder/vcap.baf directory has the following text files: ./folder/vcap.baf/Vcap_BAF155_500bp_Top10000.fimo.1e-100.motifs.txt
+
+bash command = mkdir ./folder/vcap.baf/matrices
+dir already exists
+each_file = ./folder/vcap.baf/Vcap_BAF155_500bp_Top10000.fimo.1e-100.motifs.txt
+
+progress ... 20/1727458 = 0.00 pct
+progress ... 50020/1727458 = 2.90 pct
+progress ... 100020/1727458 = 5.79 pct
+progress ... 150020/1727458 = 8.68 pct
+progress ... 200020/1727458 = 11.58 pct
+progress ... 250020/1727458 = 14.47 pct
+progress ... 300020/1727458 = 17.37 pct
+progress ... 350020/1727458 = 20.26 pct
+progress ... 400020/1727458 = 23.16 pct
+progress ... 450020/1727458 = 26.05 pct
+progress ... 500020/1727458 = 28.95 pct
+progress ... 550020/1727458 = 31.84 pct
+progress ... 600020/1727458 = 34.73 pct
+progress ... 650020/1727458 = 37.63 pct
+progress ... 700020/1727458 = 40.52 pct
+progress ... 750020/1727458 = 43.42 pct
+progress ... 800020/1727458 = 46.31 pct
+progress ... 850020/1727458 = 49.21 pct
+progress ... 900020/1727458 = 52.10 pct
+progress ... 950020/1727458 = 55.00 pct
+progress ... 1000020/1727458 = 57.89 pct
+progress ... 1050020/1727458 = 60.78 pct
+progress ... 1100020/1727458 = 63.68 pct
+progress ... 1150020/1727458 = 66.57 pct
+progress ... 1200020/1727458 = 69.47 pct
+progress ... 1250020/1727458 = 72.36 pct
+progress ... 1300020/1727458 = 75.26 pct
+progress ... 1350020/1727458 = 78.15 pct
+progress ... 1400020/1727458 = 81.05 pct
+progress ... 1450020/1727458 = 83.94 pct
+progress ... 1500020/1727458 = 86.83 pct
+progress ... 1550020/1727458 = 89.73 pct
+progress ... 1600020/1727458 = 92.62 pct
+progress ... 1650020/1727458 = 95.52 pct
+progress ... 1700020/1727458 = 98.41 pct
+baf_folders_name = bt549.baf
+
+./folder/bt549.baf directory has the following text files: ./folder/bt549.baf/BT549_BRG1_500bp_Top10000.fimo.1e-100.motifs.txt
+
+bash command = mkdir ./folder/bt549.baf/matrices
+dir already exists
+each_file = ./folder/bt549.baf/BT549_BRG1_500bp_Top10000.fimo.1e-100.motifs.txt
+
+progress ... 20/1765148 = 0.00 pct
+progress ... 50020/1765148 = 2.83 pct
+progress ... 100020/1765148 = 5.67 pct
+progress ... 150020/1765148 = 8.50 pct
+progress ... 200020/1765148 = 11.33 pct
+progress ... 250020/1765148 = 14.16 pct
+progress ... 300020/1765148 = 17.00 pct
+progress ... 350020/1765148 = 19.83 pct
+progress ... 400020/1765148 = 22.66 pct
+progress ... 450020/1765148 = 25.49 pct
+progress ... 500020/1765148 = 28.33 pct
+progress ... 550020/1765148 = 31.16 pct
+progress ... 600020/1765148 = 33.99 pct
+progress ... 650020/1765148 = 36.83 pct
+progress ... 700020/1765148 = 39.66 pct
+progress ... 750020/1765148 = 42.49 pct
+progress ... 800020/1765148 = 45.32 pct
+progress ... 850020/1765148 = 48.16 pct
+progress ... 900020/1765148 = 50.99 pct
+progress ... 950020/1765148 = 53.82 pct
+progress ... 1000020/1765148 = 56.65 pct
+progress ... 1050020/1765148 = 59.49 pct
+progress ... 1100020/1765148 = 62.32 pct
+progress ... 1150020/1765148 = 65.15 pct
+progress ... 1200020/1765148 = 67.98 pct
+progress ... 1250020/1765148 = 70.82 pct
+progress ... 1300020/1765148 = 73.65 pct
+progress ... 1350020/1765148 = 76.48 pct
+progress ... 1400020/1765148 = 79.31 pct
+progress ... 1450020/1765148 = 82.15 pct
+progress ... 1500020/1765148 = 84.98 pct
+progress ... 1550020/1765148 = 87.81 pct
+progress ... 1600020/1765148 = 90.65 pct
+progress ... 1650020/1765148 = 93.48 pct
+progress ... 1700020/1765148 = 96.31 pct
+progress ... 1750020/1765148 = 99.14 pct
+
+made it to the bitter end! in 3.7 minutes 
+'''
