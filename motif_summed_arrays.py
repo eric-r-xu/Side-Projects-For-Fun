@@ -67,7 +67,7 @@ for baf_folder in baf_folders:
         if bash_command_output != 0:
             print('dir already exists')
         else:
-            print('dir succeeded')
+            print('make directory succeeded')
         print ('each_file = %s') % (each_file)
         print ''
         # read whole file in as a pandas dataframe
