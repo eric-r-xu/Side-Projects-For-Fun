@@ -68,17 +68,6 @@ parent_child_pairs_2 = [
 
 
 
-
-parent_child_pairs_1 = [
-    (1, 3), (2, 3), (3, 6), (5, 6), (5, 7), (4, 5),
-    (4, 8), (4, 9), (9, 11), (14, 4), (13, 12), (12, 9)
-]
-
-parent_child_pairs_2 = [
-    (11, 10), (11, 12), (10, 2), (10, 5), (1, 3),
-    (2, 3), (3, 4), (5, 6), (5, 7), (7, 8)
-]
-
 def display(input_func):
     print ('%s ==> %s' % (input_func, str(eval(input_func))))
 
